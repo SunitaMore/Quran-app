@@ -4,6 +4,7 @@ import { Button } from "../components/ui-components";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "../components/ui-components";
 import { Badge } from "../components/ui-components";
 import { BookOpen, Clock, GraduationCap, Users, CheckCircle, ArrowRight, Star } from "lucide-react"
+import heroImage from "../assets/images/hero_section.png"; // ✅ No curly braces
 
 export default function App() {
   return (
@@ -25,7 +26,7 @@ export default function App() {
       </header>
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48">
+        <section className="w-full py-12 md:py-24 lg:py-32 xl:py-15">
           <div className="container px-4 md:px-6">
             <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 xl:grid-cols-2">
               <div className="flex flex-col justify-center space-y-4">
@@ -65,9 +66,9 @@ export default function App() {
               </div>
               <div className="flex items-center justify-center">
                 <img
-                  src="/placeholder.svg?height=550&width=550"
+                  src={heroImage}
                   alt="Hero Image"
-                  className="rounded-lg object-cover w-[550px] h-[550px]"
+                  className="rounded-lg object-cover w-full h-[400px]"
                 />
               </div>
             </div>
