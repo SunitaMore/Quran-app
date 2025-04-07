@@ -33,9 +33,9 @@ const facultyMembers = [
 
 const Faculty = () => {
   return (
-    <section className="bg-white px-6 py-12 md:py-20 text-gray-800">
+    <section className=" px-6 py-12 md:py-20 text-gray-800">
     <div className="max-w-6xl mx-auto text-center mb-12">
-      <h2 className="text-4xl font-bold text-blue-600 mb-4">Meet Our Faculty</h2>
+      <h2 className="text-4xl font-bold text-black-600 mb-4">Meet Our Faculty</h2>
       <p className="text-lg text-gray-600">
         Our instructors are industry professionals dedicated to your success.
       </p>
