@@ -146,7 +146,7 @@ export default function App() {
 
 
         {/* Testimonials */}
-        <section id="testimonials" className="w-full py-12 md:py-24 bg-muted/50">
+        {/* <section id="testimonials" className="w-full py-12 md:py-24 bg-muted/50">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
@@ -189,12 +189,12 @@ export default function App() {
               ))}
             </div>
           </div>
-        </section>
+        </section> */}
 
 
-        <Element name="testimonials">
+         <Element name="testimonials">
           <Testimonials />
-        </Element>
+        </Element> 
 
 
         {/* CTA */}
