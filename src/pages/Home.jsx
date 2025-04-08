@@ -308,30 +308,3 @@ const features = [
   },
 
 ]
-
-const testimonials = [
-  {
-    name: "Sarah Johnson",
-    role: "Web Developer",
-    avatar: userIcon,
-    content:
-      "The web development course completely transformed my career. I went from knowing nothing about coding to landing a full-time developer job in just 6 months.",
-  },
-  {
-    name: "Michael Chen",
-    role: "Data Analyst",
-    avatar: userIcon,
-    content:
-      "The data science curriculum was comprehensive and up-to-date. The projects helped me build a portfolio that impressed employers during interviews.",
-  },
-  {
-    name: "Emily Rodriguez",
-    role: "Marketing Manager",
-    avatar: userIcon,
-    content:
-      "The digital marketing course provided actionable strategies that I implemented immediately. Our company's online presence has grown significantly as a result.",
-  },
-]
-
-
-
