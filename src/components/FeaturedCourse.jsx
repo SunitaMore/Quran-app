@@ -3,6 +3,8 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Button } from "../components/ui-components";
 import { Badge } from "../components/ui-components";
 import { BookOpen, Clock, GraduationCap, Users, CheckCircle, ArrowRight, Star } from "lucide-react"
+
+
 // Sample data
 const courses = [
     {
@@ -55,6 +57,7 @@ const courses = [
 const FeaturedCourse = () => {
   return (
     <div>{/* Featured Courses */}
+
     <section id="courses" className="w-full py-12 md:py-24 bg-muted/50">
       <div className="container px-4 md:px-6">
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
@@ -116,7 +119,9 @@ const FeaturedCourse = () => {
           </Button>
         </div>
       </div>
-    </section></div>
+    </section>
+
+    </div>
   )
 }
 

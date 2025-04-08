@@ -5,7 +5,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Badge } from "../components/ui-components";
 import { BookOpen, Clock, GraduationCap, Users, CheckCircle, ArrowRight, Star } from "lucide-react"
 import heroImage from "../assets/images/hero_section.png"; // ✅ No curly braces
-
+import { Element } from 'react-scroll';
 export default function App() {
   return (
     <div className="flex min-h-screen flex-col">
@@ -60,8 +60,8 @@ export default function App() {
             </div>
           </div>
         </section>
-    <FeaturedCourse/>
 
+    <Element name="courses">    <FeaturedCourse/></Element>
         {/* Features */}
         <section id="features" className="w-full py-12 md:py-24">
           <div className="container px-4 md:px-6">
