@@ -1,22 +1,19 @@
 import FeaturedCourse from "../components/FeaturedCourse";
 import userIcon from '../assets/images/UserIcon.png';
-
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "../components/ui-components";
 import { Button } from "../components/ui-components";
 
 import { Badge } from "../components/ui-components";
-<<<<<<< HEAD
+
 import { BookOpen, Clock, GraduationCap, Users, CheckCircle, ArrowRight, Star, UserIcon } from "lucide-react"
-=======
-import {
-  BookOpen,
-  Clock,
-  GraduationCap,
-  Users,
-  CheckCircle,
-  ArrowRight,
-  Star,
-} from "lucide-react";
->>>>>>> f6f47330815472595330bd7e3bd1701c1b8b02a2
+
 import heroImage from "../assets/images/hero_section.png"; // ✅ No curly braces
 import { Element } from "react-scroll";
 import Testimonials from "../components/Testimonials";
@@ -146,7 +143,7 @@ export default function App() {
             </div>
           </div>
         </section>
-<<<<<<< HEAD
+
 
         {/* Testimonials */}
         <section id="testimonials" className="w-full py-12 md:py-24 bg-muted/50">
@@ -194,11 +191,11 @@ export default function App() {
           </div>
         </section>
 
-=======
+
         <Element name="testimonials">
           <Testimonials />
         </Element>
->>>>>>> f6f47330815472595330bd7e3bd1701c1b8b02a2
+
 
         {/* CTA */}
         <section className="w-full py-12 md:py-24 bg-primary text-primary-foreground">
@@ -309,7 +306,7 @@ const features = [
       "Pay once and access your course content forever, including updates.",
     icon: <CheckCircle className="h-6 w-6 text-primary" />,
   },
-<<<<<<< HEAD
+
 ]
 
 const testimonials = [
@@ -335,6 +332,6 @@ const testimonials = [
       "The digital marketing course provided actionable strategies that I implemented immediately. Our company's online presence has grown significantly as a result.",
   },
 ]
-=======
-];
->>>>>>> f6f47330815472595330bd7e3bd1701c1b8b02a2
+
+
+
