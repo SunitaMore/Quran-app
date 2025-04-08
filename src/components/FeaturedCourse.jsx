@@ -426,7 +426,7 @@ const nonItCourses = [
     price: "",
   },
 ];
-const allCourses = [...itCourses, ...nonItCourses];
+
 
 const FeaturedCourse = () => {
   const [activeTab, setActiveTab] = useState("All");
@@ -456,12 +456,12 @@ const FeaturedCourse = () => {
 
           {/* Tabs */}
           {/* Fancy Tabs */}
-<div className="relative inline-flex p-1 bg-gray-200 dark:bg-gray-800 rounded-full mt-6 shadow-inner">
+<div className="relative inline-flex p-1 bg-gray-200  dark:bg-gray-800 rounded-full mt-6 shadow-inner">
   {["All", "IT", "Non-IT"].map((tab) => (
     <button
       key={tab}
       onClick={() => setActiveTab(tab)}
-      className={`relative z-10 px-5 py-2 text-sm font-semibold rounded-full transition-all duration-300 ease-in-out focus:outline-none ${
+      className={`relative z-10 px-5 py-2 text-sm font-semibold cursor-pointer rounded-full transition-all duration-300 ease-in-out focus:outline-none ${
         activeTab === tab
           ? "bg-white text-blue-600 shadow"
           : "text-gray-600 hover:text-blue-500"
@@ -530,6 +530,7 @@ const FeaturedCourse = () => {
         </div> */}
       </div>
     </section>
+    </div>
   );
 };
 
