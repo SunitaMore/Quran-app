@@ -6,6 +6,7 @@ import AboutUs from "./pages/AboutUs"
 import Faculty from "./pages/Faculty";
 import HandProject from "./pages/HandProject"
 import HireforUs from "./pages/HireforUs"
+import ApplyNow from "./model/ApplyNow";
 function App() {
   return (
     <>
@@ -17,6 +18,7 @@ function App() {
         <Route path="/faculty" element={<Faculty/>}/>
         <Route path="/handproject" element={<HandProject/>}/>
         <Route path="/hireforus" element={<HireforUs/>}/>
+        <Route path="/applynow" element={<ApplyNow/>}/>
       </Routes>
 
     </>

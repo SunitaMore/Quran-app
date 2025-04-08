@@ -79,7 +79,7 @@ export default function ApplyNow() {
   ];
 
   return (
-    <div className="max-w-4xl mx-auto p-6 bg-white rounded-lg shadow-lg">
+    <div className="max-w-4xl mx-auto p-6 bg-white rounded-lg shadow-lg m-24">
       <h2 className="text-2xl font-bold mb-6 text-center text-blue-800">Application Form</h2>
       
       <form onSubmit={handleSubmit} className="space-y-6">
