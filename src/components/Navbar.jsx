@@ -1,8 +1,16 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { Button } from "../components/ui-components";
+
 import { Link } from "react-scroll";
+import { useNavigate } from "react-router-dom";
+
 const Navbar = () => {
+  const navigate = useNavigate();
+
+  const handleScrollTo = (sectionId) => {
+    navigate("/", { state: { scrollTo: sectionId } });
+  };
+
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center justify-between ">
@@ -18,13 +26,14 @@ const Navbar = () => {
           </NavLink>
           
           <NavLink
-            to="courses"
+            to="/aboutus"
             className="text-sm font-medium hover:text-primary"
           >
             About us
           </NavLink>
           <Link to="course" smooth={true} duration={500} offset={-70}
            className="text-sm font-medium hover:text-primary cursor-pointer"
+           onClick={() => handleScrollTo("course")}
           >
             Course
           </Link>
@@ -56,20 +65,22 @@ const Navbar = () => {
           <Link smooth={true} duration={500} offset={-70}
             to="testimonials"
             className="text-sm font-medium hover:text-primary cursor-pointer"
+            onClick={() => handleScrollTo("testimonials")}
           >
             Testimonials
           </Link>
-          <NavLink
-            to="/pricing"
-            className="text-sm font-medium hover:text-primary"
+          <Link
+            to="/contactus"
+            className="text-sm font-medium hover:text-primary cursor-pointer"
+            onClick={() => handleScrollTo("contactus")}
           >
             Contact Us
-          </NavLink>
+          </Link>
         </nav>
         <div className="flex items-center gap-4">
           <NavLink
             to="/login"
-            className="text-sm font-medium hover:text-primary mr-4"
+            className="text-sm font-medium hover:text-primary mr-4 "
           >
             Log in
           </NavLink>

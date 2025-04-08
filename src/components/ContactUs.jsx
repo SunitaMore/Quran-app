@@ -4,11 +4,11 @@ import React from 'react'
 
 const ContactUs = () => {
   return (
-    <section className="bg-gray-50 text-gray-800 px-6 py-12 md:py-20">
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-10">
+    <section id="contactus" className=" text-gray-800 px-6 py-12 md:py-20 border border-1 rounded-4xl mb-10">
+      <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-10 ">
         {/* Contact Info */}
         <div className="md:w-1/2 flex flex-col justify-center">
-          <h2 className="text-4xl font-bold text-blue-600 mb-4">Contact Us</h2>
+          <h2 className="text-4xl font-bold  mb-4">Contact Us</h2>
           <p className="text-lg mb-6">
             Have questions or need help? Fill out the form and our team will get back to you shortly.
           </p>

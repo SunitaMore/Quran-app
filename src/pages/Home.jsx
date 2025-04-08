@@ -15,9 +15,42 @@ import {
 import heroImage from "../assets/images/hero_section.png"; // ✅ No curly braces
 import { Element } from "react-scroll";
 import Testimonials from "../components/Testimonials";
+import { useLocation, useNavigate } from "react-router-dom";
+import { useEffect } from "react";
+import ContactUs from "../components/ContactUs"
+
+
 
 export default function App() {
+
+
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const sectionId = location.state?.scrollTo;
+
+    if (sectionId) {
+      const scrollToSection = () => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+
+          // Clean up the location.state so it doesn't scroll again on refresh
+          navigate(location.pathname, { replace: true, state: {} });
+        } else {
+          // Retry if element isn't loaded yet
+          setTimeout(scrollToSection, 100);
+        }
+      };
+
+      scrollToSection();
+    }
+  }, [location, navigate]);
+
   return (
+
+
     <div className="flex min-h-screen flex-col">
       <main className="flex-1">
         <Element name="home">
@@ -108,7 +141,7 @@ export default function App() {
             </div>
           </div>
         </section>
-        <Element name="testimonials" className="">
+        <Element name="testimonials">
           <Testimonials />
         </Element>
 
@@ -139,6 +172,9 @@ export default function App() {
             </div>
           </div>
         </section>
+        {/* Contact Us */}
+        <Element name="testimonials" > <ContactUs/> </Element>
+        
       </main>
       <footer className="w-full border-t py-6 md:py-0">
         <div className="container flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row">
