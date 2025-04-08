@@ -1,24 +1,27 @@
-
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import Home from './pages/Home'
-
+import "./App.css";
+import Home from "./pages/Home";
+import Navbar from "./components/Navbar";
+import { Router, Routes, Route } from 'react-router-dom';
+import AboutUs from "./pages/AboutUs"
+import Faculty from "./pages/Faculty";
+import HandProject from "./pages/HandProject"
+import HireforUs from "./pages/HireforUs"
 function App() {
-
-
   return (
     <>
-      <Home/>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<AboutUs/>}/>
+        <Route path="/faculty" element={<Faculty/>}/>
+        <Route path="/handproject" element={<HandProject/>}/>
+        <Route path="/hireforus" element={<HireforUs/>}/>
+      </Routes>
 
     </>
-  )
+  );
 }
 
-export default App
+export default App;
+// App.jsx
