@@ -1,5 +1,5 @@
 import FeaturedCourse from "../components/FeaturedCourse";
-import Navbar from "../components/Navbar";
+
 import { Button } from "../components/ui-components";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "../components/ui-components";
 import { Badge } from "../components/ui-components";
@@ -9,21 +9,7 @@ import heroImage from "../assets/images/hero_section.png"; // ✅ No curly brace
 export default function App() {
   return (
     <div className="flex min-h-screen flex-col">
-      <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="container flex h-16 items-center justify-between">
-          <div className="flex items-center gap-2">
-            
-            <span className="text-xl font-bold">IT course</span>
-          </div>
-         <Navbar/>
-          <div className="flex items-center gap-4">
-            <a href="/login" className="text-sm font-medium hover:text-primary">
-              Log in
-            </a>
-            <Button>Get Started</Button>
-          </div>
-        </div>
-      </header>
+      
       <main className="flex-1">
         {/* Hero Section */}
         <section className="w-full py-12 md:py-24 lg:py-32 xl:py-15">
@@ -146,55 +132,6 @@ export default function App() {
           </div>
         </section>
 
-        {/* Pricing */}
-        <section id="pricing" className="w-full py-12 md:py-24">
-          <div className="container px-4 md:px-6">
-            <div className="flex flex-col items-center justify-center space-y-4 text-center">
-              <div className="space-y-2">
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-                  Simple, Transparent Pricing
-                </h2>
-                <p className="max-w-[900px] text-muted-foreground md:text-xl">
-                  Choose the plan that's right for you and start learning today.
-                </p>
-              </div>
-            </div>
-            <div className="grid grid-cols-1 gap-6 md:grid-cols-3 mt-8">
-              {pricingPlans.map((plan, index) => (
-                <Card key={index} className={`flex flex-col ${plan.featured ? "border-primary shadow-lg" : ""}`}>
-                  {plan.featured && (
-                    <div className="bg-primary text-primary-foreground text-center py-2 text-sm font-medium">
-                      Most Popular
-                    </div>
-                  )}
-                  <CardHeader>
-                    <CardTitle>{plan.name}</CardTitle>
-                    <CardDescription>{plan.description}</CardDescription>
-                    <div className="mt-4">
-                      <span className="text-4xl font-bold">${plan.price}</span>
-                      <span className="text-muted-foreground">/month</span>
-                    </div>
-                  </CardHeader>
-                  <CardContent className="flex-1">
-                    <ul className="space-y-2">
-                      {plan.features.map((feature, i) => (
-                        <li key={i} className="flex items-center gap-2">
-                          <CheckCircle className="h-4 w-4 text-primary" />
-                          <span>{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </CardContent>
-                  <CardFooter>
-                    <Button className="w-full" variant={plan.featured ? "default" : "outline"}>
-                      Get Started
-                    </Button>
-                  </CardFooter>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </section>
 
         {/* CTA */}
         <section className="w-full py-12 md:py-24 bg-primary text-primary-foreground">
@@ -307,48 +244,3 @@ const testimonials = [
       "The digital marketing course provided actionable strategies that I implemented immediately. Our company's online presence has grown significantly as a result.",
   },
 ]
-
-const pricingPlans = [
-  {
-    name: "Basic",
-    description: "Perfect for beginners",
-    price: 9.99,
-    features: [
-      "Access to 50+ courses",
-      "Basic exercises",
-      "Community support",
-      "Course completion certificates",
-      "7-day money-back guarantee",
-    ],
-    featured: false,
-  },
-  {
-    name: "Pro",
-    description: "Best for serious learners",
-    price: 19.99,
-    features: [
-      "Access to all 200+ courses",
-      "Advanced projects",
-      "Priority support",
-      "Industry-recognized certificates",
-      "1-on-1 mentor sessions monthly",
-      "30-day money-back guarantee",
-    ],
-    featured: true,
-  },
-  {
-    name: "Enterprise",
-    description: "For teams and organizations",
-    price: 49.99,
-    features: [
-      "Everything in Pro plan",
-      "Custom learning paths",
-      "Team progress tracking",
-      "Dedicated account manager",
-      "API access",
-      "Custom branding options",
-    ],
-    featured: false,
-  },
-]
-
