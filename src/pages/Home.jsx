@@ -1,5 +1,5 @@
 import FeaturedCourse from "../components/FeaturedCourse";
-import userIcon from '../assets/images/UserIcon.png';
+
 import {
   Card,
   CardContent,
