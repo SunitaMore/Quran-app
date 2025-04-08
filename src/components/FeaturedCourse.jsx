@@ -488,11 +488,11 @@ const FeaturedCourse = () => {
                   {course.category}
                 </Badge>
               </div>
-              <CardHeader className="p-4">
+              <CardHeader className="p-4 bg-white">
                 <CardTitle className="line-clamp-1">{course.title}</CardTitle>
                 <CardDescription className="line-clamp-2">{course.description}</CardDescription>
               </CardHeader>
-              <CardContent className="p-4 pt-0">
+              <CardContent className="p-4 pt-0 bg-white">
                 <div className="flex items-center gap-4 text-sm text-muted-foreground">
                   <div className="flex items-center gap-1">
                     <Clock className="h-4 w-4" />
@@ -508,7 +508,7 @@ const FeaturedCourse = () => {
                   </div>
                 </div>
               </CardContent>
-              <CardFooter className="p-4 flex items-center justify-between">
+              <CardFooter className="p-4 flex items-center justify-between bg-white">
                 <div className="flex items-center">
                   <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
                   <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />

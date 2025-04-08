@@ -15,63 +15,63 @@ const Navbar = () => {
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center justify-between ">
         <div className="flex items-center gap-2">
-          <NavLink to="/" className="text-xl font-bold cursor-pointer">IT course</NavLink>
+          <NavLink to="/" className="text-xl font-bold cursor-pointer px-3 py-1 rounded hover:bg-blue-100 transition">IT course</NavLink>
         </div>
         <nav className="hidden md:flex gap-6">
           <NavLink smooth={true} duration={500} offset={-70}
             to="/"
-            className="text-sm font-medium hover:text-primary cursor-pointer"
+            className="text-sm font-medium text-muted-foreground hover:text-blue-600 transition duration-300"
           >
             Home
           </NavLink>
           
           <NavLink
             to="/aboutus"
-            className="text-sm font-medium hover:text-primary"
+             className="text-sm font-medium text-muted-foreground hover:text-blue-600 transition duration-300"
           >
             About us
           </NavLink>
           <Link to="course" smooth={true} duration={500} offset={-70}
-           className="text-sm font-medium hover:text-primary cursor-pointer"
+           className="text-sm font-medium text-muted-foreground hover:text-blue-600 transition duration-300"
            onClick={() => handleScrollTo("course")}
           >
             Course
           </Link>
           <NavLink
             to="/hireforus"
-            className="text-sm font-medium hover:text-primary"
+            className="text-sm font-medium text-muted-foreground hover:text-blue-600 transition duration-300"
           >
             Hire For Us
           </NavLink>
           <NavLink
             to="/handproject"
-            className="text-sm font-medium hover:text-primary"
+             className="text-sm font-medium text-muted-foreground hover:text-blue-600 transition duration-300"
           >
-            Hand Projects
+            Training Projects
           </NavLink>
           <NavLink
             to="/features"
-            className="text-sm font-medium hover:text-primary"
+            className="text-sm font-medium text-muted-foreground hover:text-blue-600 transition duration-300"
           >
             Blog
           </NavLink>
           <NavLink
             to="/faculty"
-            className="text-sm font-medium hover:text-primary"
+            className="text-sm font-medium text-muted-foreground hover:text-blue-600 transition duration-300"
           >
             Faculty
           </NavLink>
 
           <Link smooth={true} duration={500} offset={-70}
             to="testimonials"
-            className="text-sm font-medium hover:text-primary cursor-pointer"
+           className="text-sm font-medium text-muted-foreground hover:text-blue-600 transition duration-300"
             onClick={() => handleScrollTo("testimonials")}
           >
             Testimonials
           </Link>
           <Link
             to="/contactus"
-            className="text-sm font-medium hover:text-primary cursor-pointer"
+            className="text-sm font-medium text-muted-foreground hover:text-blue-600 transition duration-300"
             onClick={() => handleScrollTo("contactus")}
           >
             Contact Us
@@ -82,7 +82,7 @@ const Navbar = () => {
             to="/login"
             className="text-sm font-medium hover:text-primary mr-4 "
           >
-            Log in
+            Apply Now
           </NavLink>
           
         </div>
