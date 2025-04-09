@@ -174,180 +174,6 @@
 // export default Testimonials;
 
 
-// import React from "react";
-// import userIcon from "../assets/images/userIcon.png";
-// import {
-//   Card,
-//   CardHeader,
-//   CardContent,
-//   CardFooter,
-//   CardTitle,
-//   CardDescription,
-// } from "../components/ui-components";
-// import { Star } from "lucide-react";
-
-// const testimonials = [
-//   {
-//     name: "Sarah Johnson",
-//     role: "Web Developer",
-//     avatar: userIcon,
-//     content:
-//       "The web development course completely transformed my career. I went from knowing nothing about coding to landing a full-time developer job in just 6 months.",
-//   },
-//   {
-//     name: "Michael Chen",
-//     role: "Data Analyst",
-//     avatar: userIcon,
-//     content:
-//       "The data science curriculum was comprehensive and up-to-date. The projects helped me build a portfolio that impressed employers during interviews.",
-//   },
-//   {
-//     name: "Emily Rodriguez",
-//     role: "Marketing Manager",
-//     avatar: userIcon,
-//     content:
-//       "The digital marketing course provided actionable strategies that I implemented immediately. Our company's online presence has grown significantly as a result.",
-//   },
-// ];
-
-// const Testimonials = () => {
-//   return (
-//     <section id="testimonials" className="w-full py-12 md:py-24 bg-muted/50">
-//       <div className="container px-4 md:px-6">
-//         <div className="text-center space-y-4">
-//           <h2 className="text-4xl font-bold text-black-900 sm:text-4xl md:text-5xl">
-//           From Learners to Leaders
-//           </h2>
-//           <p className="max-w-[900px] mx-auto text-muted-foreground md:text-xl font-bold" >
-//             Hear from our students who have transformed their careers through our courses.
-//           </p>
-//         </div>
-
-//         {/* Vertical cards, one per row */}
-//         <div className="mt-10 space-y-6">
-//           {testimonials.map((testimonial, index) => (
-//             <Card
-//               key={index}
-//               className="bg-gray-100 rounded-2xl shadow-md hover:shadow-xl hover:scale-[1.02] transition-all duration-100 border-none"
-//             >
-//               <CardHeader className="pb-2">
-//                 <div className="flex items-center gap-4">
-//                   <img
-//                     src={testimonial.avatar || "/placeholder.svg"}
-//                     alt={testimonial.name}
-//                     className="rounded-full object-cover w-[50px] h-[50px]"
-//                   />
-//                   <div>
-//                     <CardTitle className="text-lg">{testimonial.name}</CardTitle>
-//                     <CardDescription>{testimonial.role}</CardDescription>
-//                   </div>
-//                 </div>
-//               </CardHeader>
-
-//               <CardContent>
-//                 <p className="text-muted-foreground text-left w-full">
-//                   {testimonial.content}
-//                 </p>
-//               </CardContent>
-
-
-//               <CardFooter>
-//                 <div className="w-full flex justify-end">
-//                   {[...Array(5)].map((_, i) => (
-//                     <Star
-//                       key={i}
-//                       className="h-4 w-4 text-yellow-400 fill-yellow-400"
-//                     />
-//                   ))}
-//                 </div>
-//               </CardFooter>
-//             </Card>
-//           ))}
-//         </div>
-//       </div>
-//     </section>
-//   );
-// };
-
-// export default Testimonials;
-
-// src/components/Testimonial.js
-
-
-
-// import React from "react";
-// import student from '../assets/images/image.webp'
-
-// const Testimonial = () => {
-//   return (
-//     <div className="bg-white min-h-screen px-4 py-12">
-//       <div className="max-w-6xl mx-auto">
-//         <h1 className="text-5xl text-center mb-4 font-bold">Success Stories  </h1>
-//         <h2 className="text-2xl font-bold text-gray-800 mb-6">
-//           Hear from our students who have transformed their careers through our courses.
-//         </h2>
-
-//         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-//           {/* Text Section */}
-//           <div className="bg-orange-50  rounded-lg shadow-md border">
-//             <div className="text-yellow-400 text-xl mb-2">★★★★★</div>
-//             <p>Sarah Johnson</p>
-//             <p className="text-gray-700 mb-4">
-
-//               "The web development course completely transformed my career. I went from knowing nothing about coding to landing a full-time developer job in just 6 months."The hands-on projects helped me build real-world skills and boosted my confidence with every module."
-//             </p>
-
-
-//             <p>Sarah Johnson</p>
-//             <p className="text-gray-700 mb-4">
-
-//               "The web development course completely transformed my career. I went from knowing nothing about coding to landing a full-time developer job in just 6 months."The hands-on projects helped me build real-world skills and boosted my confidence with every module."
-//             </p>
-
-
-//             <p>Sarah Johnson</p>
-//             <p className="text-gray-700 mb-4">
-
-//               "The web development course completely transformed my career. I went from knowing nothing about coding to landing a full-time developer job in just 6 months."The hands-on projects helped me build real-world skills and boosted my confidence with every module."
-//             </p>
-
-
-
-//             <button className="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700">
-//               Read More
-//             </button>
-//             <p className="mt-4 font-semibold text-gray-800"></p>
-
-//           </div>
-
-//           {/* Image Section */}
-//           <div className="relative">
-//             <img
-//               src={student}
-//               alt="student"
-//               className="rounded-lg w-full object-cover"
-//             />
-//             <div className="absolute bottom-4 left-4 bg-white p-3 shadow-md rounded-md flex items-center space-x-2">
-//               <span className="text-red-600 font-bold text-xl">5K+</span>
-//               <span className="text-gray-700">Satisfied Students</span>
-//             </div>
-//           </div>
-//         </div>
-
-//         {/* Bottom Banner
-//         <div className="mt-10 bg-orange-600 text-white text-center py-4 rounded">
-//           <p>
-//             <span className="font-bold">100% Job*</span> Up to 50% Discount! Call Now: 
-//             <a href="tel:+918857096492" className="underline ml-2">+91 8857096492</a>
-//           </p>
-//         </div> */}
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Testimonial;
-
 
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -364,28 +190,29 @@ const testimonials = [
   {
     name: "Sarah Johnson",
     role: "Web Developer",
-    content:"The web development course completely transformed my career. I went from knowing nothing about coding to landing a full-time developer job in just 6 months. When I started, even basic HTML tags felt intimidating. But the course structure made everything approachable — from the fundamentals of web design to building complex applications with JavaScript, React, and Node.js Each module built upon the last, and the hands-on projects helped solidify every concept. I especially appreciated the real-world assignments — like building a weather app, an e-commerce site, and integrating APIs — which made me feel like I was already working in the industry.",
-      
-      avatar: userIcon,
+    content: "The web development course completely transformed my career. I went from knowing nothing about coding to landing a full-time developer job in just 6 months. When I started, even basic HTML tags felt intimidating. But the course structure made everything approachable — from the fundamentals of web design to building complex applications with JavaScript, React, and Node.js Each module built upon the last, and the hands-on projects helped solidify every concept. I especially appreciated the real-world assignments — like building a weather app, an e-commerce site, and integrating APIs — which made me feel like I was already working in the industry.",
+
+    avatar: userIcon,
   },
   {
     name: "Michael Chen",
     role: "Data Analyst",
     content:
       "The data science curriculum was comprehensive and practical. Building a portfolio with real projects gave me a competitive edge during job applications. I wasn’t just learning theory — I was applying concepts like regression analysis, machine learning, and data visualization using real datasets.By the end of the course, I had a polished portfolio, a GitHub profile full of meaningful work, and a renewed sense of confidence. Within weeks of graduating, I landed a data analyst role and have been thriving ever since.",
-      avatar: userIcon,
+    avatar: userIcon,
   },
   {
     name: "Emily Rodriguez",
     role: "Marketing Manager",
     content:
       "The digital marketing course provided me with strategies I could immediately apply at work. It helped elevate our brand presence significantly. From SEO fundamentals to advanced social media campaigns, the curriculum was well-structured and aligned with current industry practices.Weekly feedback from mentors helped me refine my approach and build confidence in running A/B tests, optimizing ads, and using tools like Google Analytics and Meta Ads Manager effectively. I even revamped our company’s entire email marketing funnel based on what I learned.",
-      avatar: userIcon,
+    avatar: userIcon,
   },
 ];
 
 const Testimonial = () => {
   return (
+    <section id="testimonials" className="w-full py-12 md:py-24 bg-muted/50">
     <div className="bg-blue-50 min-h-screen px-4 py-12">
       <div className="max-w-6xl mx-auto">
         <h1 className="text-4xl text-center mb-4 font-bold">Success Stories</h1>
@@ -407,71 +234,71 @@ const Testimonial = () => {
             >
               {testimonials.map((testimonial, index) => (
                 <SwiperSlide key={index}>
-                {({ isActive }) => {
-                  const [showFullText, setShowFullText] = React.useState(false);
-                  const contentPreview = testimonial.content.slice(0, 200);
-              
-                  return (
-                    <>
-                      <div className="flex items-center justify-between mb-4">
-                        <div className="flex items-center gap-4">
-                          <img
-                            src={testimonial.avatar || "/placeholder.svg"}
-                            alt={testimonial.name}
-                            className="w-[50px] h-[50px] rounded-full object-cover border border-gray-300"
-                          />
-                          <div className="flex flex-col space-y-1">
-  {/* Name with LinkedIn Icon */}
-  <div className="flex flex-col space-y-1">
-  {/* Name with LinkedIn Icon */}
-  <div className="flex items-center space-x-2 text-gray-900 text-2xl font-semibold">
-  <span>{testimonial.name}</span>
-  <a
-  href={testimonial.linkedin}
-  target="_blank"
-  rel="noopener noreferrer"
-  className="text-blue-600"
->
-  <GrLinkedin />
-</a>
+                  {({ isActive }) => {
+                    const [showFullText, setShowFullText] = React.useState(false);
+                    const contentPreview = testimonial.content.slice(0, 200);
 
-    
-  </div>
+                    return (
+                      <>
+                        <div className="flex items-center justify-between mb-4">
+                          <div className="flex items-center gap-4">
+                            <img
+                              src={testimonial.avatar || "/placeholder.svg"}
+                              alt={testimonial.name}
+                              className="w-[50px] h-[50px] rounded-full object-cover border border-gray-300"
+                            />
+                            <div className="flex flex-col space-y-1">
+                              {/* Name with LinkedIn Icon */}
+                              <div className="flex flex-col space-y-1">
+                                {/* Name with LinkedIn Icon */}
+                                <div className="flex items-center space-x-2 text-gray-900 text-2xl font-semibold">
+                                  <span>{testimonial.name}</span>
+                                  <a
+                                    href={testimonial.linkedin}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-blue-600"
+                                  >
+                                    <GrLinkedin />
+                                  </a>
 
-  {/* Role with LinkedIn Icon */}
-  <div className="flex items-center space-x-2 text-black text-lg">
-   
-    <span>{testimonial.role}</span>
-  </div>
-</div>
 
-</div>
+                                </div>
 
+                                {/* Role with LinkedIn Icon */}
+                                <div className="flex items-center space-x-2 text-black text-lg">
+
+                                  <span>{testimonial.role}</span>
+                                </div>
+                              </div>
+
+                            </div>
+
+                          </div>
+                          <div className="flex gap-1">
+                            {[...Array(5)].map((_, i) => (
+                              <span key={i} className="text-yellow-400 text-xl">★</span>
+                            ))}
+                          </div>
                         </div>
-                        <div className="flex gap-1">
-                          {[...Array(5)].map((_, i) => (
-                            <span key={i} className="text-yellow-400 text-xl">★</span>
-                          ))}
-                        </div>
-                      </div>
-              
-                      <p className="text-gray-700 text-base leading-relaxed">
-                        {showFullText ? testimonial.content : `${contentPreview}...`}
-                      </p>
-                      <button
-                        onClick={() => setShowFullText(!showFullText)}
-                        className="mt-3 text-white hover:underline text-sm font-medium bg-blue-700 w-20 h-10 rounded-2xl"
-                      >
-                        {showFullText ? " Less" : "More"}
-                      </button>
-                    </>
-                  );
-                }}
-              </SwiperSlide>
-              
+
+                        <p className="text-gray-700 text-base leading-relaxed">
+                          {showFullText ? testimonial.content : `${contentPreview}...`}
+                        </p>
+                        <button
+                          onClick={() => setShowFullText(!showFullText)}
+                          className="mt-3 text-white hover:underline text-sm font-medium bg-blue-700 w-20 h-10 rounded-2xl"
+                        >
+                          {showFullText ? " Less" : "More"}
+                        </button>
+                      </>
+                    );
+                  }}
+                </SwiperSlide>
+
               ))}
             </Swiper>
-            
+
 
             {/* Arrows inside card */}
             <div className="flex justify-center gap-4 mt-4">
@@ -501,6 +328,7 @@ const Testimonial = () => {
         </div>
       </div>
     </div>
+    </section>
   );
 };
 
