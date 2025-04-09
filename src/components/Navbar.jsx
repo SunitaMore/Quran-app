@@ -41,10 +41,10 @@ const Navbar = () => {
             Course
           </Link>
           <NavLink
-            to="/hireforus"
+            to="/hirefromus"
             className="text-sm font-medium text-muted-foreground hover:text-blue-600 transition duration-300"
           >
-            Hire For Us
+            Hire From Us
           </NavLink>
           <NavLink
             to="/handproject"
@@ -53,7 +53,7 @@ const Navbar = () => {
             Training Projects
           </NavLink>
           <NavLink
-            to="/features"
+            to="/blog"
             className="text-sm font-medium text-muted-foreground hover:text-blue-600 transition duration-300"
           >
             Blog

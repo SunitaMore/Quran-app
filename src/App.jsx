@@ -7,6 +7,7 @@ import Faculty from "./pages/Faculty";
 import HandProject from "./pages/HandProject"
 import HireforUs from "./pages/HireforUs"
 import ApplyNow from "./model/ApplyNow";
+import Blog from "./pages/Blog";
 function App() {
   return (
     <>
@@ -17,8 +18,9 @@ function App() {
         <Route path="/aboutus" element={<AboutUs/>}/>
         <Route path="/faculty" element={<Faculty/>}/>
         <Route path="/handproject" element={<HandProject/>}/>
-        <Route path="/hireforus" element={<HireforUs/>}/>
+        <Route path="/hirefromus" element={<HireforUs/>}/>
         <Route path="/applynow" element={<ApplyNow/>}/>
+        <Route path="/blog" element={<Blog/>}/>
       </Routes>
 
     </>
