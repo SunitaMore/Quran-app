@@ -14,6 +14,14 @@ export default function ApplicationForm() {
     experienceLevel: "",
     resume: null,
     comments: "",
+    experiences: [
+      {
+        company: "",
+        role: "",
+        techStack: "",
+        duration: "",
+      },
+    ],
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -41,6 +49,16 @@ export default function ApplicationForm() {
         ...prevData,
         courses: selectedCourses,
       }));
+    } else if (name.startsWith("experiences.")) {
+      // Handle experience fields
+      const [ index, subField] = name.split(".");
+      const updatedExperiences = [...formData.experiences];
+      updatedExperiences[index][subField] = value;
+
+      setFormData((prevData) => ({
+        ...prevData,
+        experiences: updatedExperiences,
+      }));
     } else {
       setFormData((prevData) => ({
         ...prevData,
@@ -50,34 +68,39 @@ export default function ApplicationForm() {
     }
   };
 
+  const addExperience = () => {
+    setFormData((prevData) => ({
+      ...prevData,
+      experiences: [
+        ...prevData.experiences,
+        {
+          company: "",
+          role: "",
+          techStack: "",
+          duration: "",
+        },
+      ],
+    }));
+  };
+
+  const removeExperience = (index) => {
+    const updatedExperiences = [...formData.experiences];
+    updatedExperiences.splice(index, 1);
+
+    setFormData((prevData) => ({
+      ...prevData,
+      experiences: updatedExperiences,
+    }));
+  };
+
   const sendEmail = async () => {
-    // This is a placeholder function showing how to implement EmailJS
-    // You'll need to include the EmailJS script in your HTML and replace with your actual service, template and user IDs
-
-    // For demonstration - in a real implementation you would:
-    // 1. Include EmailJS script in index.html:
-    // <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-
-    // 2. Initialize EmailJS in your component or in a useEffect:
-    // emailjs.init("YOUR_USER_ID");
-
-    // 3. Prepare template parameters
-
-    // 4. Since we can't directly include EmailJS in this artifact, here's the code you would use:
-    // return emailjs.send(
-    //   "YOUR_SERVICE_ID",
-    //   "YOUR_TEMPLATE_ID",
-    //   templateParams
-    // );
-
-    // For this demo, we'll simulate a successful response
+    // EmailJS implementation placeholder
     return new Promise((resolve) => setTimeout(resolve, 1500));
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Validate form
     if (formData.courses.length === 0) {
       setSubmitStatus({
         success: false,
@@ -90,22 +113,14 @@ export default function ApplicationForm() {
     setSubmitStatus({ success: false, message: "" });
 
     try {
-      // Note: EmailJS doesn't handle file uploads in its free plan
-      // For file handling, you'd need a paid plan or another service like FormSpree
-
       await sendEmail();
-
-      // Success handling
       setSubmitStatus({
         success: true,
         message:
           "Your application has been submitted successfully! We will contact you soon.",
       });
-
-      // Clear the form after successful submission
       handleCancel();
     } catch (error) {
-      // Error handling
       setSubmitStatus({
         success: false,
         message:
@@ -131,8 +146,15 @@ export default function ApplicationForm() {
       experienceLevel: "",
       resume: null,
       comments: "",
+      experiences: [
+        {
+          company: "",
+          role: "",
+          techStack: "",
+          duration: "",
+        },
+      ],
     });
-    // Clear file input
     const fileInput = document.getElementById("resume");
     if (fileInput) fileInput.value = "";
   };
@@ -146,14 +168,14 @@ export default function ApplicationForm() {
     { id: "mobile-dev", label: "Mobile App Development" },
     { id: "cloud-computing", label: "Cloud Computing" },
     { id: "artificial-intelligence", label: "Artificial Intelligence" },
-    
-  ]
+  ];
   const nonItCourseOptions = [
     { id: "hr-essentials", label: "HR Essentials" },
     { id: "personality-devlopment", label: "Personality Devlopment" },
     { id: "ms-office", label: "MS Office" },
     { id: "recruitment-and-", label: "Recruitment and Staffing" },
   ];
+
   return (
     <div className="max-w-4xl mx-auto p-6 bg-white rounded-lg shadow-lg mt-6">
       <h2 className="text-2xl font-bold mb-6 text-center text-blue-800">
@@ -173,9 +195,9 @@ export default function ApplicationForm() {
       )}
 
       <form onSubmit={handleSubmit} className="space-y-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
           {/* Name */}
-          <div>
+          <div className="col-span-4">
             <label
               htmlFor="name"
               className="block text-sm font-medium text-gray-700 mb-1"
@@ -194,7 +216,7 @@ export default function ApplicationForm() {
           </div>
 
           {/* Email */}
-          <div>
+          <div className="col-span-4">
             <label
               htmlFor="email"
               className="block text-sm font-medium text-gray-700 mb-1"
@@ -211,8 +233,28 @@ export default function ApplicationForm() {
               className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
           </div>
+          <div className="col-span-4">
+            <label
+              htmlFor="email"
+              className="block text-sm font-medium text-gray-700 mb-1"
+            >
+              Current Location <span className="text-red-600">*</span>
+            </label>
+            <input
+              type="text"
+              id="location"
+              name="location"
+              value={formData.location}
+              onChange={handleChange}
+              required
+              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
           {/* Age */}
-          <div>
+          <div className="col-span-3">
             <label
               htmlFor="age"
               className="block text-sm font-medium text-gray-700 mb-1"
@@ -230,110 +272,8 @@ export default function ApplicationForm() {
             />
           </div>
 
-          {/* Phone */}
-          <div>
-            <label
-              htmlFor="phone"
-              className="block text-sm font-medium text-gray-700 mb-1"
-            >
-              Phone Number <span className="text-red-600">*</span>
-            </label>
-            <input
-              type="tel"
-              id="phone"
-              name="phone"
-              value={formData.phone}
-              onChange={handleChange}
-              required
-              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
-          </div>
-
-
-          <div className="md:col-span-2">
-  <label className="block text-sm font-medium text-gray-700 mb-2">
-    Select Courses <span className="text-red-600">*</span>
-  </label>
-
-  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-    {/* IT Courses */}
-    <div className="col-span-2">
-      <h3 className="text-sm font-semibold  mb-2">IT Courses</h3>
-      <div className="grid grid-cols-2 gap-2">
-        {courseOptions.map((course) => (
-          <div key={course.id} className="flex items-center">
-            <input
-              type="checkbox"
-              id={course.id}
-              name="courses"
-              value={course.id}
-              checked={formData.courses.includes(course.id)}
-              onChange={handleChange}
-              className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
-            />
-            <label
-              htmlFor={course.id}
-              className="ml-2 block text-sm text-gray-700"
-            >
-              {course.label}
-            </label>
-          </div>
-        ))}
-      </div>
-    </div>
-
-    {/* Non-IT Courses */}
-    <div>
-      <h3 className="text-sm font-semibold  mb-2">Non-IT Courses</h3>
-      <div className="grid grid-cols-1 gap-2">
-        {nonItCourseOptions.map((course) => (
-          <div key={course.id} className="flex items-center">
-            <input
-              type="checkbox"
-              id={course.id}
-              name="courses"
-              value={course.id}
-              checked={formData.courses.includes(course.id)}
-              onChange={handleChange}
-              className="h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300 rounded"
-            />
-            <label
-              htmlFor={course.id}
-              className="ml-2 block text-sm text-gray-700"
-            >
-              {course.label}
-            </label>
-          </div>
-        ))}
-      </div>
-    </div>
-  </div>
-
-  {formData.courses.length === 0 && (
-    <p className="text-xs text-red-500 mt-1">
-      Please select at least one course
-    </p>
-  )}
-</div>
-
-
-          {/* IT Background */}
-          <div className="flex items-center">
-            <input
-              type="checkbox"
-              id="it"
-              name="it"
-              checked={formData.it}
-              onChange={handleChange}
-              className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
-            />
-            <label htmlFor="it" className="ml-2 block text-sm text-gray-700">
-              IT Background
-            </label>
-          </div>
-
           {/* Gender */}
-          <div>
+          <div className="col-span-3">
             <label className="block text-sm font-medium text-gray-700 mb-1">
               Gender
             </label>
@@ -375,7 +315,205 @@ export default function ApplicationForm() {
             </div>
           </div>
 
-          {/* Education */}
+          {/* Phone */}
+          <div className="col-span-3">
+            <label
+              htmlFor="phone"
+              className="block text-sm font-medium text-gray-700 mb-1"
+            >
+              Phone Number<span className="text-red-600">*</span>{" "}
+              <span className="text-gray-600 text-[0.7rem]">
+                (Whatsapp No.)
+              </span>
+            </label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              value={formData.phone}
+              onChange={handleChange}
+              required
+              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+          </div>
+
+          <div className="col-span-3">
+            <label
+              htmlFor="phone"
+              className="block text-sm font-medium text-gray-700 mb-1"
+            >
+              Alternative Number <span className="text-red-600">*</span>
+            </label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              value={formData.phone}
+              onChange={handleChange}
+              required
+              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+          </div>
+        </div>
+
+        {/* Experience Section */}
+        <div className="space-y-4">
+          <h3 className="text-lg font-semibold text-gray-800">
+            Work Experience
+          </h3>
+
+          {formData.experiences.map((exp, index) => (
+            <div
+              key={index}
+              className="grid grid-cols-1 md:grid-cols-12 gap-6 border p-4 rounded-lg"
+            >
+              <div className="col-span-3">
+                <label className="block text-sm font-medium text-gray-700 mb-1">
+                  Company Name
+                </label>
+                <input
+                  type="text"
+                  name={`experiences.${index}.company`}
+                  value={exp.company}
+                  onChange={handleChange}
+                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  placeholder="Last company worked"
+                />
+              </div>
+
+              <div className="col-span-3">
+                <label className="block text-sm font-medium text-gray-700 mb-1">
+                  Role/Position
+                </label>
+                <input
+                  type="text"
+                  name={`experiences.${index}.role`}
+                  value={exp.role}
+                  onChange={handleChange}
+                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  placeholder="Your role in company"
+                />
+              </div>
+
+              <div className="col-span-3">
+                <label className="block text-sm font-medium text-gray-700 mb-1">
+                  Tech Stack
+                </label>
+                <input
+                  type="text"
+                  name={`experiences.${index}.techStack`}
+                  value={exp.techStack}
+                  onChange={handleChange}
+                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  placeholder="Technologies worked with"
+                />
+              </div>
+
+              <div className="col-span-2">
+                <label className="block text-sm font-medium text-gray-700 mb-1">
+                  Duration
+                </label>
+                <input
+                  type="text"
+                  name={`experiences.${index}.duration`}
+                  value={exp.duration}
+                  onChange={handleChange}
+                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  placeholder="e.g. 2 years"
+                />
+              </div>
+
+              <div className="flex justify-end mt-2 -ml-4">
+                <button
+                  type="button"
+                  onClick={() => removeExperience(index)}
+                  className="text-red-600 hover:text-red-800 text-sm"
+                >
+                  Remove
+                </button>
+              </div>
+            </div>
+          ))}
+
+          <div className="flex justify-start">
+            <button
+              type="button"
+              onClick={addExperience}
+              className="px-4 py-2 bg-green-500 text-white rounded-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500"
+            >
+              + Add Another Experience
+            </button>
+          </div>
+        </div>
+
+        <div className="md:col-span-2">
+          <label className="block text-sm font-medium text-gray-700 mb-2">
+            Select Courses <span className="text-red-600">*</span>
+          </label>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {/* IT Courses */}
+            <div className="col-span-2">
+              <h3 className="text-sm font-semibold  mb-2">IT Courses</h3>
+              <div className="grid grid-cols-2 gap-2">
+                {courseOptions.map((course) => (
+                  <div key={course.id} className="flex items-center">
+                    <input
+                      type="checkbox"
+                      id={course.id}
+                      name="courses"
+                      value={course.id}
+                      checked={formData.courses.includes(course.id)}
+                      onChange={handleChange}
+                      className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+                    />
+                    <label
+                      htmlFor={course.id}
+                      className="ml-2 block text-sm text-gray-700"
+                    >
+                      {course.label}
+                    </label>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Non-IT Courses */}
+            <div>
+              <h3 className="text-sm font-semibold  mb-2">Non-IT Courses</h3>
+              <div className="grid grid-cols-1 gap-2">
+                {nonItCourseOptions.map((course) => (
+                  <div key={course.id} className="flex items-center">
+                    <input
+                      type="checkbox"
+                      id={course.id}
+                      name="courses"
+                      value={course.id}
+                      checked={formData.courses.includes(course.id)}
+                      onChange={handleChange}
+                      className="h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300 rounded"
+                    />
+                    <label
+                      htmlFor={course.id}
+                      className="ml-2 block text-sm text-gray-700"
+                    >
+                      {course.label}
+                    </label>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {formData.courses.length === 0 && (
+            <p className="text-xs text-red-500 mt-1">
+              Please select at least one course
+            </p>
+          )}
+        </div>
+
+        {/* Education */}
+        <div className="grid grid-cols-3 gap-4">
           <div>
             <label
               htmlFor="education"
