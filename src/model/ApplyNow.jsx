@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-export default function ApplyNow() {
+export default function ApplicationForm() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -14,6 +14,9 @@ export default function ApplyNow() {
     resume: null,
     comments: ''
   });
+  
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState({ success: false, message: '' });
 
   const handleChange = (e) => {
     const { name, value, type, checked, files } = e.target;
@@ -44,11 +47,81 @@ export default function ApplyNow() {
     }
   };
 
-  const handleSubmit = (e) => {
+  const sendEmail = async () => {
+    // This is a placeholder function showing how to implement EmailJS
+    // You'll need to include the EmailJS script in your HTML and replace with your actual service, template and user IDs
+    
+    // For demonstration - in a real implementation you would:
+    // 1. Include EmailJS script in index.html:
+    // <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    
+    // 2. Initialize EmailJS in your component or in a useEffect:
+    // emailjs.init("YOUR_USER_ID");
+    
+    // 3. Prepare template parameters
+    const templateParams = {
+      name: formData.name,
+      email: formData.email,
+      phone: formData.phone,
+      courses: formData.courses.join(', '),
+      it_background: formData.it ? 'Yes' : 'No',
+      gender: formData.gender,
+      education: formData.education,
+      batch_time: formData.batchTime,
+      experience_level: formData.experienceLevel,
+      comments: formData.comments
+    };
+    
+    // 4. Since we can't directly include EmailJS in this artifact, here's the code you would use:
+    // return emailjs.send(
+    //   "YOUR_SERVICE_ID",
+    //   "YOUR_TEMPLATE_ID",
+    //   templateParams
+    // );
+    
+    // For this demo, we'll simulate a successful response
+    return new Promise(resolve => setTimeout(resolve, 1500));
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    // Here you would typically send the data to your backend
-    alert('Application submitted successfully!');
+    
+    // Validate form
+    if (formData.courses.length === 0) {
+      setSubmitStatus({
+        success: false,
+        message: 'Please select at least one course'
+      });
+      return;
+    }
+    
+    setIsSubmitting(true);
+    setSubmitStatus({ success: false, message: '' });
+    
+    try {
+      // Note: EmailJS doesn't handle file uploads in its free plan
+      // For file handling, you'd need a paid plan or another service like FormSpree
+      
+      await sendEmail();
+      
+      // Success handling
+      setSubmitStatus({
+        success: true,
+        message: 'Your application has been submitted successfully! We will contact you soon.'
+      });
+      
+      // Clear the form after successful submission
+      handleCancel();
+    } catch (error) {
+      // Error handling
+      setSubmitStatus({
+        success: false,
+        message: 'There was an error submitting your application. Please try again later.'
+      });
+      console.error('Error submitting form:', error);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleCancel = () => {
@@ -65,6 +138,9 @@ export default function ApplyNow() {
       resume: null,
       comments: ''
     });
+    // Clear file input
+    const fileInput = document.getElementById('resume');
+    if (fileInput) fileInput.value = '';
   };
 
   const courseOptions = [
@@ -79,8 +155,14 @@ export default function ApplyNow() {
   ];
 
   return (
-    <div className="max-w-4xl mx-auto p-6 bg-white rounded-lg shadow-lg m-24">
+    <div className="max-w-4xl mx-auto p-6 bg-white rounded-lg shadow-lg">
       <h2 className="text-2xl font-bold mb-6 text-center text-blue-800">Application Form</h2>
+      
+      {submitStatus.message && (
+        <div className={`mb-6 p-4 rounded-md ${submitStatus.success ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'}`}>
+          {submitStatus.message}
+        </div>
+      )}
       
       <form onSubmit={handleSubmit} className="space-y-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -302,6 +384,7 @@ export default function ApplyNow() {
             <p className="text-xs text-gray-500 mt-1">
               Supported formats: PDF, DOC, DOCX (Max size: 2MB)
             </p>
+
           </div>
         </div>
         
@@ -332,9 +415,10 @@ export default function ApplyNow() {
           </button>
           <button
             type="submit"
-            className="px-6 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+            disabled={isSubmitting}
+            className={`px-6 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white ${isSubmitting ? 'bg-blue-400 cursor-not-allowed' : 'bg-blue-600 hover:bg-blue-700'} focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500`}
           >
-            Submit Application
+            {isSubmitting ? 'Submitting...' : 'Submit Application'}
           </button>
         </div>
       </form>
