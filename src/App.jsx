@@ -8,6 +8,7 @@ import HandProject from "./pages/HandProject"
 import HireforUs from "./pages/HireforUs"
 import ApplyNow from "./model/ApplyNow";
 import Blog from "./pages/Blog";
+import HireForm from "./model/HireForm";
 function App() {
   return (
     <>
@@ -21,6 +22,7 @@ function App() {
         <Route path="/hirefromus" element={<HireforUs/>}/>
         <Route path="/applynow" element={<ApplyNow/>}/>
         <Route path="/blog" element={<Blog/>}/>
+        <Route path="/hireform" element={<HireForm/>}/>
       </Routes>
 
     </>
