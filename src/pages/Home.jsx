@@ -209,18 +209,7 @@ export default function App() {
                   Join thousands of students already learning on our platform.
                 </p>
               </div>
-              <div className="flex flex-col gap-2 min-[400px]:flex-row">
-                <Button size="lg" variant="secondary" className="px-8">
-                  Sign Up Now
-                </Button>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="bg-transparent border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10"
-                >
-                  Learn More
-                </Button>
-              </div>
+             
             </div>
           </div>
         </section>
@@ -234,32 +223,7 @@ export default function App() {
             <GraduationCap className="h-6 w-6" />
             <span className="text-xl font-bold">IT Course</span>
           </div>
-          <div className="flex gap-4">
-            <a
-              href="#"
-              className="text-sm font-medium hover:underline underline-offset-4"
-            >
-              About
-            </a>
-            <a
-              href="#"
-              className="text-sm font-medium hover:underline underline-offset-4"
-            >
-              Courses
-            </a>
-            <a
-              href="#"
-              className="text-sm font-medium hover:underline underline-offset-4"
-            >
-              Pricing
-            </a>
-            <a
-              href="#"
-              className="text-sm font-medium hover:underline underline-offset-4"
-            >
-              Contact
-            </a>
-          </div>
+          
           <p className="text-sm text-muted-foreground">
             &copy; {new Date().getFullYear()} IT Course. All rights reserved.
           </p>
