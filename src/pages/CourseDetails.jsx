@@ -17,6 +17,7 @@ import personalityImg from "../assets/images/personality.png";
 import officeCommImg from "../assets/images/officecomm.png";
 import recruitmentImg from "../assets/images/recruitment.png";
 import webDevImg from "../assets/images/web_dev.png";
+import { NavLink } from 'react-router-dom';
 
 
 
@@ -448,9 +449,9 @@ const CourseDetails = () => {
       </ul>
 
       <div className="text-center mt-8">
-        <button className="bg-blue-600 text-white px-6 py-2 rounded-full text-lg hover:bg-blue-700 transition duration-300">
+        <NavLink to="/applynow" className="bg-blue-600 text-white px-6 py-2 rounded-full text-lg hover:bg-blue-700 transition duration-300">
           Enroll Now
-        </button>
+        </NavLink>
       </div>
     </div>
   );

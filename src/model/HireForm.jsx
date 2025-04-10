@@ -3,8 +3,11 @@ import { useState } from "react";
 export default function HireForm() {
   const [formData, setFormData] = useState({
     companyName: "",
+    companyEmail: "",
+    workLocationType: "",
     companyLocation: "",
     companyWebsite: "",
+    companyLinkedIn: "",
     companyPhone: "",
     requirements: [
       {
@@ -25,13 +28,16 @@ export default function HireForm() {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-
-    if (name.startsWith("requirements.")) {
-      // Handle requirements fields
-      const [index, subField] = name.split(".");
+  
+    // Match fields like requirements.0.techStack
+    const match = name.match(/^requirements\.(\d+)\.(\w+)$/);
+  
+    if (match) {
+      const index = parseInt(match[1], 10);
+      const subField = match[2];
       const updatedRequirements = [...formData.requirements];
       updatedRequirements[index][subField] = value;
-
+  
       setFormData((prevData) => ({
         ...prevData,
         requirements: updatedRequirements,
@@ -78,6 +84,15 @@ export default function HireForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    // Validate location field if needed
+    if ((formData.workLocationType === "hybrid" || formData.workLocationType === "on-site") && !formData.companyLocation) {
+      setSubmitStatus({
+        success: false,
+        message: "Please provide company location for hybrid or on-site work",
+      });
+      return;
+    }
+
     setIsSubmitting(true);
     setSubmitStatus({ success: false, message: "" });
 
@@ -104,8 +119,11 @@ export default function HireForm() {
   const handleCancel = () => {
     setFormData({
       companyName: "",
+      companyEmail: "",
+      workLocationType: "",
       companyLocation: "",
       companyWebsite: "",
+      companyLinkedIn: "",
       companyPhone: "",
       requirements: [
         {
@@ -163,17 +181,18 @@ export default function HireForm() {
                 className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
             </div>
-            {/* Company Name */}
+            
+            {/* Company Email */}
             <div className="col-span-6">
               <label
-                htmlFor="companyName"
+                htmlFor="companyEmail"
                 className="block text-sm font-medium text-gray-700 mb-1"
               >
                 Company Email <span className="text-red-600">*</span>
               </label>
               <input
-                type="text"
-                id="companyName"
+                type="email"
+                id="companyEmail"
                 name="companyEmail"
                 value={formData.companyEmail}
                 onChange={handleChange}
@@ -182,8 +201,9 @@ export default function HireForm() {
               />
             </div>
 
+
             {/* Company Website */}
-            <div className="col-span-6">
+            <div className="col-span-4">
               <label
                 htmlFor="companyWebsite"
                 className="block text-sm font-medium text-gray-700 mb-1"
@@ -201,8 +221,27 @@ export default function HireForm() {
               />
             </div>
 
+            {/* Company LinkedIn */}
+            <div className="col-span-4">
+              <label
+                htmlFor="companyLinkedIn"
+                className="block text-sm font-medium text-gray-700 mb-1"
+              >
+                Company LinkedIn
+              </label>
+              <input
+                type="url"
+                id="companyLinkedIn"
+                name="companyLinkedIn"
+                value={formData.companyLinkedIn}
+                onChange={handleChange}
+                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                placeholder=""
+              />
+            </div>
+
             {/* Company Phone */}
-            <div className="col-span-6">
+            <div className="col-span-4">
               <label
                 htmlFor="companyPhone"
                 className="block text-sm font-medium text-gray-700 mb-1"
@@ -219,28 +258,52 @@ export default function HireForm() {
                 className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
             </div>
-
             
-            {/* Company Location */}
-            <div className="col-span-12">
+            {/* Work Location Type */}
+            <div className="col-span-6">
               <label
-                htmlFor="companyLocation"
-                className="block text-sm font-medium text-gray-700 mb-1 "
+                htmlFor="workLocationType"
+                className="block text-sm font-medium text-gray-700 mb-1"
               >
-                Location <span className="text-red-600">*</span>
+                Work Location Type <span className="text-red-600">*</span>
               </label>
-              <input
-                type="text"
-                id="companyLocation"
-                name="companyLocation"
-                value={formData.companyLocation}
-                
+              <select
+                id="workLocationType"
+                name="workLocationType"
+                value={formData.workLocationType}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-2 border h-24 border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-              />
+                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              >
+                <option value="">Select work location type</option>
+                <option value="remote">Remote</option>
+                <option value="hybrid">Hybrid</option>
+                <option value="on-site">On-site</option>
+              </select>
             </div>
+
+            {/* Conditional Company Location */}
+            {(formData.workLocationType === "hybrid" || formData.workLocationType === "on-site") && (
+              <div className="col-span-6">
+                <label
+                  htmlFor="companyLocation"
+                  className="block text-sm font-medium text-gray-700 mb-1"
+                >
+                  Company Location <span className="text-red-600">*</span>
+                </label>
+                <input
+                  type="text"
+                  id="companyLocation"
+                  name="companyLocation"
+                  value={formData.companyLocation}
+                  onChange={handleChange}
+                  required={formData.workLocationType === "hybrid" || formData.workLocationType === "on-site"}
+                  className="w-full px-4 py-2 border h-10 border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
+              </div>
+            )}
           </div>
+          
         </div>
 
         {/* Requirements Section */}
@@ -305,6 +368,7 @@ export default function HireForm() {
                   placeholder="e.g., React, Node.js, MongoDB"
                 />
               </div>
+              
               {/* Contact Email */}
               <div className="col-span-6">
                 <label className="block text-sm font-medium text-gray-700 mb-1">
@@ -319,6 +383,7 @@ export default function HireForm() {
                   className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
               </div>
+              
               {/* Checklist */}
               <div className="col-span-12">
                 <label className="block text-sm font-medium text-gray-700 mb-1">
@@ -345,18 +410,17 @@ export default function HireForm() {
                   </button>
                 )}
               </div>
+              <div className="flex justify-start w-84 ">
+                <button
+                  type="button"
+                  onClick={addRequirement}
+                  className="px-4 py-2 bg-green-500  text-white rounded-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500"
+                >
+                  + Add Another Position
+                </button>
+              </div>
             </div>
           ))}
-
-          <div className="flex justify-start">
-            <button
-              type="button"
-              onClick={addRequirement}
-              className="px-4 py-2 bg-green-500 text-white rounded-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500"
-            >
-              + Add Another Position
-            </button>
-          </div>
         </div>
 
         {/* Form Actions */}

@@ -74,7 +74,7 @@ const HireforUs = () => {
         </p>
       </div>
 
-      <div className="max-w-5xl mx-auto flex flex-col gap-6">
+      <div className="max-w-5xl mx-auto grid grid-cols-2 gap-6">
         {jobRoles.map((role, index) => (
           <NavLink to="/hireform">
           <div
@@ -82,7 +82,7 @@ const HireforUs = () => {
             className="group w-full flex flex-col md:flex-row bg-gray-100 cursor-pointer rounded-xl shadow-md hover:shadow-2xl transition-all duration-500 ease-in-out transform hover:scale-[1.02] overflow-hidden h-64"
           >
             {/* Image Section */}
-            <div className="md:w-1/4 w-full h-64 overflow-hidden">
+            <div className="md:w-2/4 w-full h-64 overflow-hidden">
            
             
               <img

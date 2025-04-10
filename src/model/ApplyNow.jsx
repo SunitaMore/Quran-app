@@ -13,6 +13,7 @@ export default function ApplicationForm() {
     batchTime: "",
     experienceLevel: "",
     resume: null,
+    learningMode: "", // Added learning mode field
     comments: "",
     experiences: [
       {
@@ -51,7 +52,7 @@ export default function ApplicationForm() {
       }));
     } else if (name.startsWith("experiences.")) {
       // Handle experience fields
-      const [ index, subField] = name.split(".");
+      const [index, subField] = name.split(".");
       const updatedExperiences = [...formData.experiences];
       updatedExperiences[index][subField] = value;
 
@@ -145,6 +146,7 @@ export default function ApplicationForm() {
       batchTime: "",
       experienceLevel: "",
       resume: null,
+      learningMode: "", // Reset learning mode
       comments: "",
       experiences: [
         {
@@ -277,42 +279,17 @@ export default function ApplicationForm() {
             <label className="block text-sm font-medium text-gray-700 mb-1">
               Gender
             </label>
-            <div className="flex space-x-4 justify-center">
-              <div className="flex items-center">
-                <input
-                  type="radio"
-                  id="male"
-                  name="gender"
-                  value="male"
-                  checked={formData.gender === "male"}
-                  onChange={handleChange}
-                  className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300"
-                />
-                <label
-                  htmlFor="male"
-                  className="ml-2 block text-sm text-gray-700"
-                >
-                  Male
-                </label>
-              </div>
-              <div className="flex items-center">
-                <input
-                  type="radio"
-                  id="female"
-                  name="gender"
-                  value="female"
-                  checked={formData.gender === "female"}
-                  onChange={handleChange}
-                  className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300"
-                />
-                <label
-                  htmlFor="female"
-                  className="ml-2 block text-sm text-gray-700"
-                >
-                  Female
-                </label>
-              </div>
-            </div>
+            <select
+              id="gender"
+              name="gender"
+              value={formData.gender}
+              onChange={handleChange}
+              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            >
+              <option value="">Select Gender</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select>
           </div>
 
           {/* Phone */}
@@ -432,18 +409,17 @@ export default function ApplicationForm() {
                   Remove
                 </button>
               </div>
+              <div className="flex justify-start w-88">
+                <button
+                  type="button"
+                  onClick={addExperience}
+                  className="px-4 py-2 bg-green-500 text-white rounded-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500"
+                >
+                  + Add Another Experience
+                </button>
+              </div>
             </div>
           ))}
-
-          <div className="flex justify-start">
-            <button
-              type="button"
-              onClick={addExperience}
-              className="px-4 py-2 bg-green-500 text-white rounded-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500"
-            >
-              + Add Another Experience
-            </button>
-          </div>
         </div>
 
         <div className="md:col-span-2">
@@ -513,8 +489,8 @@ export default function ApplicationForm() {
         </div>
 
         {/* Education */}
-        <div className="grid grid-cols-3 gap-4">
-          <div>
+        <div className="grid grid-cols-12 gap-4">
+          <div className="col-span-6">
             <label
               htmlFor="education"
               className="block text-sm font-medium text-gray-700 mb-1"
@@ -539,7 +515,7 @@ export default function ApplicationForm() {
           </div>
 
           {/* Batch Time */}
-          <div>
+          <div className="col-span-6">
             <label
               htmlFor="batchTime"
               className="block text-sm font-medium text-gray-700 mb-1"
@@ -562,7 +538,7 @@ export default function ApplicationForm() {
           </div>
 
           {/* Experience Level */}
-          <div>
+          <div className="col-span-4">
             <label
               htmlFor="experienceLevel"
               className="block text-sm font-medium text-gray-700 mb-1"
@@ -584,7 +560,7 @@ export default function ApplicationForm() {
           </div>
 
           {/* Resume Upload */}
-          <div>
+          <div className="col-span-4">
             <label
               htmlFor="resume"
               className="block text-sm font-medium text-gray-700 mb-1"
@@ -603,6 +579,29 @@ export default function ApplicationForm() {
             <p className="text-xs text-gray-500 mt-1">
               Supported formats: PDF, DOC, DOCX (Max size: 2MB)
             </p>
+          </div>
+
+          {/* Mode of Learning - Added this new field */}
+          <div className="col-span-4">
+            <label
+              htmlFor="learningMode"
+              className="block text-sm font-medium text-gray-700 mb-1"
+            >
+              Preferred Mode of Learning <span className="text-red-600">*</span>
+            </label>
+            <select
+              id="learningMode"
+              name="learningMode"
+              value={formData.learningMode}
+              onChange={handleChange}
+              required
+              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            >
+              <option value="">Select learning mode</option>
+              <option value="online">Online</option>
+              <option value="offline">Offline (In-person)</option>
+              <option value="hybrid">Hybrid (Online + Offline)</option>
+            </select>
           </div>
         </div>
 
