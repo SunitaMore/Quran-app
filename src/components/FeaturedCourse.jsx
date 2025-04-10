@@ -5,7 +5,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Button } from "../components/ui-components";
 import { Badge } from "../components/ui-components";
 import { BookOpen, Clock, Users, ArrowRight, Star } from "lucide-react"
-
+import { NavLink } from 'react-router-dom';
 import webDevImg from '../assets/images/web_dev.png';
 import mobdevImg from '../assets/images/mobile_dev.png';
 import pythonImg from '../assets/images/python.png';
@@ -338,12 +338,13 @@ const FeaturedCourse = () => {
     )}
 
     {/* Apply Now Button */}
-    <button
+    <NavLink
+    to="/applynow"
       onClick={() => console.log("Apply Now clicked")}
       className=" ml-10 bg-green-500 text-white text-sm px-2 py-1 pt-1 rounded-full hover:bg-green-900 transition duration-300"
     >
       Apply Now
-    </button>
+    </NavLink>
   </div>
 </CardFooter>
 
