@@ -21,7 +21,176 @@ import webDevImg from "../assets/images/web_dev.png";
 
 
 
+
 const coursesData = [
+  {
+    id: "mean stack development",
+    title: "MEAN Stack Development",
+    description: "Full-stack JavaScript development using MongoDB, Express, Angular, and Node.js.",
+    duration: "3 Months",
+    instructor: "Aman Qureshi",
+    level: "Advanced",
+    language: "English",
+    mode: "Offline",
+    image: meanImg,
+    syllabus : [
+  "Understand the architecture and components of the MEAN stack: MongoDB, Express.js, Angular, and Node.js.",
+  "Set up a Node.js environment and build RESTful APIs using Express.js and middleware.",
+  "Design NoSQL schemas in MongoDB and perform CRUD operations using Mongoose ORM.",
+  "Create a dynamic frontend using Angular with TypeScript, components, and services.",
+  "Implement two-way data binding, form validation, and reactive forms in Angular.",
+  "Secure routes and APIs using JWT-based authentication and role-based access control.",
+  "Use Angular HttpClient to interact with backend APIs and handle asynchronous requests.",
+  "Deploy MEAN stack apps to cloud platforms like Heroku or DigitalOcean.",
+  "Follow best practices for folder structure, performance optimization, and error handling.",
+  "Build a full-stack capstone project, such as a task tracker or inventory system.",
+  "Learn how to work with Angular Material for UI components and design a user-friendly interface.",
+  "Explore advanced Angular features such as lazy loading, Angular modules, and state management.",
+  "Understand the importance of unit testing and integration testing in MEAN stack applications.",
+  "Implement internationalization (i18n) and localization in Angular for global applications.",
+  "Learn how to use Docker to containerize MEAN stack applications for easier deployment.",
+  "Understand how to handle real-time communication with WebSockets and Socket.IO in Node.js.",
+  "Learn about CORS (Cross-Origin Resource Sharing) and how to configure it in Express.js.",
+  "Implement server-side validation and error handling in Express.js APIs.",
+  "Understand the role of services in Angular and how to implement them for better code modularity.",
+  "Work with Angular Routing for navigation and nested views.",
+  "Integrate third-party libraries and APIs into an Angular application for extended functionality.",
+  "Learn about Angular lifecycle hooks and how to use them effectively in components.",
+  "Understand the concept of observables and how to work with RxJS in Angular for reactive programming.",
+  "Learn about the different ways to handle authentication and authorization in Angular applications.",
+  "Build responsive layouts using Angular and CSS Flexbox/Grid system.",
+  "Use environment variables for configuration management in both frontend and backend applications.",
+  "Integrate email notifications or SMS alerts using third-party APIs (like SendGrid or Twilio).",
+  "Learn to implement a logging mechanism in Node.js using libraries like Winston or Morgan.",
+  "Understand the differences between SQL and NoSQL databases and when to use them in full-stack development.",
+  "Use MongoDB Atlas for managing databases in the cloud and connecting them to your Node.js backend.",
+  "Learn about server-side rendering (SSR) in Angular to improve SEO performance and loading speed.",
+  "Handle user roles and permissions using middleware in Express.js.",
+  "Integrate social login functionality (Facebook, Google, etc.) into your app using OAuth.",
+  "Build RESTful services that interact with both MongoDB and external APIs.",
+  "Optimize the performance of Angular applications using techniques like lazy loading and change detection strategies.",
+  "Explore state management techniques in Angular using services, RxJS, or NgRx for complex applications.",
+  "Learn to implement GraphQL in a MEAN stack for more flexible data fetching.",
+  "Understand the concept of session management and how to maintain sessions in Express.js using cookies or JWT.",
+  "Set up version control with Git and GitHub for project collaboration and code management.",
+  "Learn to handle deployment issues, scaling, and monitoring for production-grade MEAN applications.",
+  "Understand testing strategies and tools like Jasmine, Karma, and Jest for testing Angular and Node.js applications.",
+  "Build a multi-language platform with Angular by integrating dynamic translations and localizations.",
+  "Integrate caching strategies (like Redis) in your backend to speed up the retrieval of frequently requested data.",
+  "Learn about container orchestration using Kubernetes for deploying and managing large-scale MEAN applications.",
+  "Implement API rate limiting and throttling to prevent abuse of your backend services.",
+  "Use advanced MongoDB features like aggregation pipelines, indexing, and sharding for optimized data handling.",
+  "Learn to integrate payment systems such as Stripe or PayPal in your MEAN stack applications.",
+  "Work with cloud storage services (such as AWS S3) to manage file uploads and storage in your applications.",
+  "Understand and implement event-driven architecture in MEAN applications with message queues like RabbitMQ or Kafka.",
+  "Learn how to monitor and log MEAN stack applications with tools like ELK Stack (Elasticsearch, Logstash, Kibana)."
+]
+
+    
+  },
+  {
+    id: "mern stack development",
+    title: "MERN Stack Development",
+    description: "Develop dynamic full-stack apps with MongoDB, Express, React, and Node.",
+    duration: "3 Months",
+    instructor: "Rohit Dey",
+    level: "Advanced",
+    language: "English",
+    mode: "Hybrid",
+    image: mernImg,
+    syllabus: [
+        "Master the MERN stack: MongoDB for database, Express.js for backend, React for frontend, and Node.js as runtime.",
+        "Set up a server with Node.js and build robust RESTful APIs using Express.js.",
+        "Create and manage MongoDB collections and documents using Mongoose for data modeling.",
+        "Develop a React-based frontend with reusable components and React Router for navigation.",
+        "Implement state management using Hooks and Context API for scalable applications.",
+        "Integrate backend APIs with the frontend for dynamic data handling and UI updates.",
+        "Add authentication and authorization features with JWT and bcrypt for user roles and security.",
+        "Deploy the MERN application using services like Render, Vercel, or Netlify with backend integration.",
+        "Use Postman for API testing and Git for version control and team collaboration.",
+        "Build and launch a final full-stack application such as a blog platform, task manager, or e-commerce site.",
+        "Understand the architecture and components of the MERN stack: MongoDB, Express.js, React, and Node.js.",
+        "Set up a Node.js environment and build RESTful APIs using Express.js and middleware.",
+        "Design NoSQL schemas in MongoDB and perform CRUD operations using Mongoose ORM.",
+        "Create a dynamic frontend using React with components, hooks, and state management.",
+        "Implement two-way data binding, form validation, and controlled/uncontrolled components in React.",
+        "Secure routes and APIs using JWT-based authentication and role-based access control.",
+        "Use React Router for handling client-side routing and navigation.",
+        "Deploy MERN stack apps to cloud platforms like Heroku or AWS.",
+        "Integrate third-party APIs and manage requests in React using Axios.",
+        "Build and deploy full-stack projects such as task managers or e-commerce websites",
+      ],
+      
+  },
+  {
+    id: "python developer",
+    title: "Python Developer",
+    description: "Master Python from basics to advanced for web and automation.",
+    duration: "3 Months",
+    instructor: "Ayesha Verma",
+    level: "Beginner to Advanced",
+    language: "English",
+    mode: "Online",
+    image: pythonDevImg,
+    syllabus: [
+        "Start with Python syntax, variables, loops, functions, and data structures such as lists and dictionaries.",
+        "Understand object-oriented programming in Python including classes, inheritance, and encapsulation.",
+        "Develop web applications using Flask and explore routing, templating, and forms.",
+        "Work with file handling, error management, and regular expressions.",
+        "Perform data manipulation and analysis using NumPy and Pandas libraries.",
+        "Learn to scrape data from websites using BeautifulSoup and Requests modules.",
+        "Write automation scripts for real-world tasks like email notifications or file renaming.",
+        "Work with APIs to fetch external data and integrate it into Python applications.",
+        "Understand unit testing in Python and build test-driven programs using PyTest.",
+        "Build a complete project such as a portfolio site, blog, or automation tool using Python and Flask.",
+        "Introduction to Python programming: data types, variables, and basic syntax.",
+        "Understand control structures like loops, conditionals, and functions in Python.",
+        "Work with Python libraries such as NumPy, Pandas, and Matplotlib for data analysis.",
+        "Learn object-oriented programming (OOP) principles in Python with classes and inheritance.",
+        "Use Python for web development with Flask and Django frameworks.",
+        "Handle file operations, working with text and binary files.",
+        "Understand and implement error handling in Python using try-except blocks.",
+        "Perform web scraping using BeautifulSoup and Selenium.",
+        "Learn about database integration in Python with SQLite and PostgreSQL.",
+        "Deploy Python applications to cloud platforms and manage dependencies with virtual environments."
+      ],
+      
+  },
+  {
+    id: "java programming",
+    title: "Java Programming",
+    description: "Comprehensive Java training covering core to advanced topics.",
+    duration: "2 Months",
+    instructor: "Sneha Sharma",
+    level: "Beginner",
+    language: "English",
+    mode: "Offline",
+    image: javaImg,
+    syllabus: [
+        "Learn the syntax and structure of Java including variables, data types, control statements, and loops.",
+        "Understand object-oriented programming principles like inheritance, polymorphism, abstraction, and encapsulation.",
+        "Work with Java Collections Framework such as ArrayList, HashMap, and TreeSet to manage data efficiently.",
+        "Explore exception handling techniques and create custom exceptions to build robust applications.",
+        "Connect Java applications with MySQL using JDBC for performing database operations like CRUD.",
+        "Develop GUI-based applications using JavaFX or Swing with interactive components and event handling.",
+        "Understand file I/O, serialization, and multithreading for advanced Java programming.",
+        "Explore Java 8+ features including Lambda expressions, Streams API, and Functional Interfaces.",
+        "Build RESTful APIs using Spring Boot and manage application layers with proper architecture.",
+        "Create a real-world Java project, such as a mini banking system or an employee management portal.",
+        "Introduction to Java programming: syntax, data types, and control structures.",
+  "Understand object-oriented programming (OOP) principles with classes and objects.",
+  "Work with Java collections, such as lists, sets, and maps.",
+  "Handle exceptions and errors using try-catch blocks in Java.",
+  "Learn multithreading and concurrency in Java.",
+  "Work with Java 8+ features such as Lambda expressions and Streams API.",
+  "Develop Java applications using Spring Boot for web and RESTful services.",
+  "Build desktop applications using JavaFX and Swing.",
+  "Integrate Java applications with databases like MySQL and PostgreSQL.",
+  "Learn about testing in Java using JUnit and Mockito frameworks."
+      ]
+      ,
+  },
+
   { id: "web-development",
     title: "Web Development",
     description: "Learn to build modern, responsive websites and web apps from scratch using HTML, CSS, JavaScript, and popular frameworks.",
@@ -74,30 +243,7 @@ const coursesData = [
       ],
       
   },
-  {
-    id: "python developer",
-    title: "Python Developer",
-    description: "Master Python from basics to advanced for web and automation.",
-    duration: "3 Months",
-    instructor: "Ayesha Verma",
-    level: "Beginner to Advanced",
-    language: "English",
-    mode: "Online",
-    image: pythonDevImg,
-    syllabus: [
-        "Start with Python syntax, variables, loops, functions, and data structures such as lists and dictionaries.",
-        "Understand object-oriented programming in Python including classes, inheritance, and encapsulation.",
-        "Develop web applications using Flask and explore routing, templating, and forms.",
-        "Work with file handling, error management, and regular expressions.",
-        "Perform data manipulation and analysis using NumPy and Pandas libraries.",
-        "Learn to scrape data from websites using BeautifulSoup and Requests modules.",
-        "Write automation scripts for real-world tasks like email notifications or file renaming.",
-        "Work with APIs to fetch external data and integrate it into Python applications.",
-        "Understand unit testing in Python and build test-driven programs using PyTest.",
-        "Build a complete project such as a portfolio site, blog, or automation tool using Python and Flask."
-      ],
-      
-  },
+  
   {
     id: "devops",
     title: "DevOps",
@@ -122,30 +268,7 @@ const coursesData = [
       ],
       
   },
-  {
-    id: "java programming",
-    title: "Java Programming",
-    description: "Comprehensive Java training covering core to advanced topics.",
-    duration: "2 Months",
-    instructor: "Sneha Sharma",
-    level: "Beginner",
-    language: "English",
-    mode: "Offline",
-    image: javaImg,
-    syllabus: [
-        "Learn the syntax and structure of Java including variables, data types, control statements, and loops.",
-        "Understand object-oriented programming principles like inheritance, polymorphism, abstraction, and encapsulation.",
-        "Work with Java Collections Framework such as ArrayList, HashMap, and TreeSet to manage data efficiently.",
-        "Explore exception handling techniques and create custom exceptions to build robust applications.",
-        "Connect Java applications with MySQL using JDBC for performing database operations like CRUD.",
-        "Develop GUI-based applications using JavaFX or Swing with interactive components and event handling.",
-        "Understand file I/O, serialization, and multithreading for advanced Java programming.",
-        "Explore Java 8+ features including Lambda expressions, Streams API, and Functional Interfaces.",
-        "Build RESTful APIs using Spring Boot and manage application layers with proper architecture.",
-        "Create a real-world Java project, such as a mini banking system or an employee management portal."
-      ]
-      ,
-  },
+  
   {
     id: "aws cloud essentials",
     title: "AWS Cloud Essentials",
@@ -242,54 +365,7 @@ const coursesData = [
       ],
       
   },
-  {
-    id: "mean stack development",
-    title: "MEAN Stack Development",
-    description: "Full-stack JavaScript development using MongoDB, Express, Angular, and Node.js.",
-    duration: "3 Months",
-    instructor: "Aman Qureshi",
-    level: "Advanced",
-    language: "English",
-    mode: "Offline",
-    image: meanImg,
-    syllabus: [
-        "Understand the architecture and components of the MEAN stack: MongoDB, Express.js, Angular, and Node.js.",
-        "Set up a Node.js environment and build RESTful APIs using Express.js and middleware.",
-        "Design NoSQL schemas in MongoDB and perform CRUD operations using Mongoose ORM.",
-        "Create a dynamic frontend using Angular with TypeScript, components, and services.",
-        "Implement two-way data binding, form validation, and reactive forms in Angular.",
-        "Secure routes and APIs using JWT-based authentication and role-based access control.",
-        "Use Angular HttpClient to interact with backend APIs and handle asynchronous requests.",
-        "Deploy MEAN stack apps to cloud platforms like Heroku or DigitalOcean.",
-        "Follow best practices for folder structure, performance optimization, and error handling.",
-        "Build a full-stack capstone project, such as a task tracker or inventory system."
-      ],
-      
-  },
-  {
-    id: "mern stack development",
-    title: "MERN Stack Development",
-    description: "Develop dynamic full-stack apps with MongoDB, Express, React, and Node.",
-    duration: "3 Months",
-    instructor: "Rohit Dey",
-    level: "Advanced",
-    language: "English",
-    mode: "Hybrid",
-    image: mernImg,
-    syllabus: [
-        "Master the MERN stack: MongoDB for database, Express.js for backend, React for frontend, and Node.js as runtime.",
-        "Set up a server with Node.js and build robust RESTful APIs using Express.js.",
-        "Create and manage MongoDB collections and documents using Mongoose for data modeling.",
-        "Develop a React-based frontend with reusable components and React Router for navigation.",
-        "Implement state management using Hooks and Context API for scalable applications.",
-        "Integrate backend APIs with the frontend for dynamic data handling and UI updates.",
-        "Add authentication and authorization features with JWT and bcrypt for user roles and security.",
-        "Deploy the MERN application using services like Render, Vercel, or Netlify with backend integration.",
-        "Use Postman for API testing and Git for version control and team collaboration.",
-        "Build and launch a final full-stack application such as a blog platform, task manager, or e-commerce site."
-      ],
-      
-  },
+  
   {
   id: "hr-essentials",
   title: "HR Essentials",
@@ -385,56 +461,107 @@ const coursesData = [
 
 
 const CourseDetails = () => {
+  // const { courseId } = useParams();
+  // const navigate = useNavigate();
+
+  // const course = coursesData.find((course) => course.id === courseId);
+  
+
+  // if (!course) {
+  //   return (
+  //     <div className="p-8 text-center text-red-600 font-bold bg-white">
+  //       Course Not Found
+  //     </div>
+  //   );
+  // }
   const { courseId } = useParams();
   const navigate = useNavigate();
 
-  const course = coursesData.find((course) => course.id === courseId);
+  // Find the current course based on the ID
+  const currentIndex = coursesData.findIndex((course) => course.id === courseId);
+  const currentCourse = coursesData[currentIndex];
 
-  if (!course) {
+  // Check if the course is found
+  if (!currentCourse) {
     return (
       <div className="p-8 text-center text-red-600 font-bold bg-white">
         Course Not Found
       </div>
     );
   }
-  
+
+  // Function to handle "Next" button click
+   // Handle "Previous" button click (Navigate to previous course or Featured Courses if first course)
+   const handlePrevious = () => {
+    if (currentIndex === 0) {
+      // If it's the first course, navigate to Featured Courses page
+      navigate("/courses");
+    } else {
+      const previousIndex = currentIndex - 1;
+      navigate(`/course/${coursesData[previousIndex].id}`);
+    }
+  };
+
+  // Handle "Next" button click (Navigate to the next course or Featured Courses)
+  const handleNext = () => {
+    const nextIndex = currentIndex + 1 < coursesData.length ? currentIndex + 1 : 0; // Loop back to first course after last
+    navigate(`/course/${coursesData[nextIndex].id}`);
+  };
 
   return (
-    <div className="bg-white p-8 text-gray-800 max-w-6xl mx-auto rounded-2xl shadow-md">
-      {/* Top Section with Image and Meta Info */}
+    <div className="bg-white p-8 text-gray-800 max-w-6xl mx-auto rounded-2xl shadow-md mt-14">
+      {/* Top Section for Buttons */}
+      <div className="flex justify-between items-center mb-6">
+        {/* Go Back Button (left side top) */}
+        <div>
+        <button
+            onClick={handlePrevious}
+            className="bg-blue-800 text-white text-sm px-3 py-1 rounded-md hover:bg-gray-700 transition flex items-center"
+          >
+            <span className="mr-2">←</span> Back
+          </button>
+        </div>
+
+        {/* Next Button (right side top) */}
+        <div>
+          <button
+            onClick={handleNext}
+            className="bg-blue-800 text-white text-sm px-3 py-1 rounded-md hover:bg-gray-700 transition flex items-center"
+          >
+            Next <span className="ml-2">→</span>
+          </button>
+        </div>
+      </div>
+
+      {/* Course Info Section */}
       <div className="flex flex-col md:flex-row gap-8 mb-6">
-     {/* Go Back + Image in one line */}
-     <div className="flex items-center gap-4 w-full md:w-1/2">
-  <button
-    onClick={() => navigate("/courses")}
-    className="bg-blue-800 text-white text-sm px-3 py-1 rounded-md hover:bg-gray-700 transition"
-  >
-    ←Back
-  </button>
+        {/* Image Section */}
 
-  {course.image && (
-    <img
-      src={course.image}
-      alt={course.title}
-      className="h-64 w-full object-cover rounded-xl"
-    />
-  )}
-</div>
+        
+        <div className="flex items-center gap-4 w-full md:w-1/2">
+          {currentCourse.image && (
+            <img
+              src={currentCourse.image}
+              alt={currentCourse.title}
+              className="h-64 w-full object-cover rounded-xl transition-transform duration-500 hover:scale-110 hover:shadow-xl"
+            />
+          )}
+          
+        </div>
 
-
-
-        {/* Meta Info on Right */}
+        {/* Meta Info Section */}
         <div className="flex flex-col justify-between w-full">
-          <h1 className="text-3xl font-bold mb-4">{course.title}</h1>
-          <p className="mb-6">{course.description}</p>
+          <h1 className="text-3xl font-bold mb-4">{currentCourse.title}</h1>
+          <p className="mb-6">{currentCourse.description}</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-base">
-          <p><strong className="text-green-600">Duration:</strong> {course.duration}</p>
-<p><strong className="text-green-600">Instructor:</strong> <span className="text-black">{course.instructor}</span></p>
-<p><strong className="text-green-600">Level:</strong> <span className="text-black">{course.level}</span></p>
-<p><strong className="text-green-600">Language:</strong> <span className="text-black">{course.language}</span></p>
-<p><strong className="text-green-600">Mode:</strong> <span className="text-black">{course.mode}</span></p>
-
+            <p><strong className="text-green-600">Duration:</strong> {currentCourse.duration}</p>
+            <p><strong className="text-green-600">Instructor:</strong> <span className="text-black">{currentCourse.instructor}</span></p>
+            <p><strong className="text-green-600">Level:</strong> <span className="text-black">{currentCourse.level}</span></p>
+            <p><strong className="text-green-600">Language:</strong> <span className="text-black">{currentCourse.language}</span></p>
+            <p><strong className="text-green-600">Mode:</strong> <span className="text-black">{currentCourse.mode}</span></p>
+            
           </div>
+          
         </div>
       </div>
 
@@ -442,7 +569,7 @@ const CourseDetails = () => {
       <h2 className="text-2xl font-semibold mb-3 border-b border-black pb-2 text-left text-red-600">Syllabus</h2>
 
       <ul className="space-y-4 list-disc list-inside pl-5 text-justify">
-        {course.syllabus.map((point, index) => (
+        {currentCourse.syllabus.map((point, index) => (
           <li key={index} className="leading-relaxed">{point}</li>
         ))}
       </ul>
