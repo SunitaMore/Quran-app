@@ -209,18 +209,7 @@ export default function App() {
                   Join thousands of students already learning on our platform.
                 </p>
               </div>
-              <div className="flex flex-col gap-2 min-[400px]:flex-row">
-                <Button size="lg" variant="secondary" className="px-8">
-                  Sign Up Now
-                </Button>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="bg-transparent border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10"
-                >
-                  Learn More
-                </Button>
-              </div>
+             
             </div>
           </div>
         </section>
