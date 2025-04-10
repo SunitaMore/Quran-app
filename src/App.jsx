@@ -8,6 +8,10 @@ import HandProject from "./pages/HandProject"
 import HireforUs from "./pages/HireforUs"
 import ApplyNow from "./model/ApplyNow";
 import Blog from "./pages/Blog";
+import CourseDetails from "./pages/CourseDetails";
+import FeaturedCourse from "./components/FeaturedCourse"; // or wherever it is
+
+
 function App() {
   return (
     <>
@@ -21,6 +25,12 @@ function App() {
         <Route path="/hirefromus" element={<HireforUs/>}/>
         <Route path="/applynow" element={<ApplyNow/>}/>
         <Route path="/blog" element={<Blog/>}/>
+         {/* Detailed course information page */}
+         <Route path="/course/:courseId" element={<CourseDetails />} />
+         <Route path="/courses" element={<FeaturedCourse />} />
+  
+
+      
       </Routes>
 
     </>
