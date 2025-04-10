@@ -234,32 +234,7 @@ export default function App() {
             <GraduationCap className="h-6 w-6" />
             <span className="text-xl font-bold">IT Course</span>
           </div>
-          <div className="flex gap-4">
-            <a
-              href="#"
-              className="text-sm font-medium hover:underline underline-offset-4"
-            >
-              About
-            </a>
-            <a
-              href="#"
-              className="text-sm font-medium hover:underline underline-offset-4"
-            >
-              Courses
-            </a>
-            <a
-              href="#"
-              className="text-sm font-medium hover:underline underline-offset-4"
-            >
-              Pricing
-            </a>
-            <a
-              href="#"
-              className="text-sm font-medium hover:underline underline-offset-4"
-            >
-              Contact
-            </a>
-          </div>
+          
           <p className="text-sm text-muted-foreground">
             &copy; {new Date().getFullYear()} IT Course. All rights reserved.
           </p>
