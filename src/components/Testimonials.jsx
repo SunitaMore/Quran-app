@@ -216,7 +216,7 @@ const testimonials = [
 
 const Testimonial = () => {
   return (
-    <section id="testimonials" className="w-full py-12 md:py-24 bg-muted/50">
+    <section id="testimonials" name="testimonials" className="w-full py-12 md:py-24 bg-muted/50">
       <div className="bg-blue-50 min-h-screen px-4 py-12">
         <div className="max-w-6xl mx-auto">
           <h1 className="text-5xl text-center mb-6 font-bold">Success Stories</h1>

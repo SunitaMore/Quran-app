@@ -18,12 +18,56 @@ import officeCommImg from "../assets/images/officecomm.png";
 import recruitmentImg from "../assets/images/recruitment.png";
 import webDevImg from "../assets/images/web_dev.png";
 import { NavLink } from 'react-router-dom';
+import { BookOpen, Clock, Users, ArrowRight, Star, User, Layers, Languages, MonitorSmartphone } from "lucide-react"
+
 
 
 
 
 
 const coursesData = [
+  
+  {
+    id: "mern stack development",
+    title: "MERN Stack Development",
+    description: "Develop dynamic full-stack apps with MongoDB, Express, React, and Node.",
+    duration: "3 Months",
+    instructor: "Rohit Dey",
+    level: "Advanced",
+    language: "English",
+    mode: "Hybrid",
+    lessons: "20",
+    students: "2.4k+",
+    image: mernImg,
+    syllabus: [
+        "Master the MERN stack: MongoDB for database, Express.js for backend, React for frontend, and Node.js as runtime.",
+        "Set up a server with Node.js and build robust RESTful APIs using Express.js.",
+        "Create and manage MongoDB collections and documents using Mongoose for data modeling.",
+        "Develop a React-based frontend with reusable components and React Router for navigation.",
+        "Implement state management using Hooks and Context API for scalable applications.",
+        "Integrate backend APIs with the frontend for dynamic data handling and UI updates.",
+        "Add authentication and authorization features with JWT and bcrypt for user roles and security.",
+        "Deploy the MERN application using services like Render, Vercel, or Netlify with backend integration.",
+        "Use Postman for API testing and Git for version control and team collaboration.",
+        "Build and launch a final full-stack application such as a blog platform, task manager, or e-commerce site.",
+        "Understand the architecture and components of the MERN stack: MongoDB, Express.js, React, and Node.js.",
+        "Set up a Node.js environment and build RESTful APIs using Express.js and middleware.",
+        "Design NoSQL schemas in MongoDB and perform CRUD operations using Mongoose ORM.",
+        "Create a dynamic frontend using React with components, hooks, and state management.",
+        "Implement two-way data binding, form validation, and controlled/uncontrolled components in React.",
+        "Secure routes and APIs using JWT-based authentication and role-based access control.",
+        "Use React Router for handling client-side routing and navigation.",
+        "Deploy MERN stack apps to cloud platforms like Heroku or AWS.",
+        "Integrate third-party APIs and manage requests in React using Axios.",
+        "Build and deploy full-stack projects such as task managers or e-commerce websites",
+      ],
+      points: [
+        "MongoDB", "Express.js", "React.js", "Node.js", "REST APIs",
+        "Authentication", "Mongoose", "Redux", "JWT", "Deployment", "Postman", "MVC Architecture"
+      ]
+      
+      
+  },
   {
     id: "mean stack development",
     title: "MEAN Stack Development",
@@ -33,6 +77,8 @@ const coursesData = [
     level: "Advanced",
     language: "English",
     mode: "Offline",
+    lessons: "30",
+    students: "2.9k+",
     image: meanImg,
     syllabus : [
   "Understand the architecture and components of the MEAN stack: MongoDB, Express.js, Angular, and Node.js.",
@@ -85,43 +131,13 @@ const coursesData = [
   "Work with cloud storage services (such as AWS S3) to manage file uploads and storage in your applications.",
   "Understand and implement event-driven architecture in MEAN applications with message queues like RabbitMQ or Kafka.",
   "Learn how to monitor and log MEAN stack applications with tools like ELK Stack (Elasticsearch, Logstash, Kibana)."
+],
+points: [
+  "MongoDB", "Express.js", "Angular", "Node.js", "TypeScript",
+  "RxJS", "Routing", "REST APIs", "JWT", "CLI", "Material UI", "App Deployment"
 ]
 
     
-  },
-  {
-    id: "mern stack development",
-    title: "MERN Stack Development",
-    description: "Develop dynamic full-stack apps with MongoDB, Express, React, and Node.",
-    duration: "3 Months",
-    instructor: "Rohit Dey",
-    level: "Advanced",
-    language: "English",
-    mode: "Hybrid",
-    image: mernImg,
-    syllabus: [
-        "Master the MERN stack: MongoDB for database, Express.js for backend, React for frontend, and Node.js as runtime.",
-        "Set up a server with Node.js and build robust RESTful APIs using Express.js.",
-        "Create and manage MongoDB collections and documents using Mongoose for data modeling.",
-        "Develop a React-based frontend with reusable components and React Router for navigation.",
-        "Implement state management using Hooks and Context API for scalable applications.",
-        "Integrate backend APIs with the frontend for dynamic data handling and UI updates.",
-        "Add authentication and authorization features with JWT and bcrypt for user roles and security.",
-        "Deploy the MERN application using services like Render, Vercel, or Netlify with backend integration.",
-        "Use Postman for API testing and Git for version control and team collaboration.",
-        "Build and launch a final full-stack application such as a blog platform, task manager, or e-commerce site.",
-        "Understand the architecture and components of the MERN stack: MongoDB, Express.js, React, and Node.js.",
-        "Set up a Node.js environment and build RESTful APIs using Express.js and middleware.",
-        "Design NoSQL schemas in MongoDB and perform CRUD operations using Mongoose ORM.",
-        "Create a dynamic frontend using React with components, hooks, and state management.",
-        "Implement two-way data binding, form validation, and controlled/uncontrolled components in React.",
-        "Secure routes and APIs using JWT-based authentication and role-based access control.",
-        "Use React Router for handling client-side routing and navigation.",
-        "Deploy MERN stack apps to cloud platforms like Heroku or AWS.",
-        "Integrate third-party APIs and manage requests in React using Axios.",
-        "Build and deploy full-stack projects such as task managers or e-commerce websites",
-      ],
-      
   },
   {
     id: "python developer",
@@ -132,6 +148,8 @@ const coursesData = [
     level: "Beginner to Advanced",
     language: "English",
     mode: "Online",
+    lessons: "30",
+    students: "2.9k+",
     image: pythonDevImg,
     syllabus: [
         "Start with Python syntax, variables, loops, functions, and data structures such as lists and dictionaries.",
@@ -155,6 +173,11 @@ const coursesData = [
         "Learn about database integration in Python with SQLite and PostgreSQL.",
         "Deploy Python applications to cloud platforms and manage dependencies with virtual environments."
       ],
+      points: [
+        "Variables", "Data Types", "Control Flow", "Functions", "OOP",
+        "Modules", "File Handling", "Error Handling", "Libraries (Pandas, NumPy)",
+        "Django/Flask", "APIs", "Database Integration"
+      ]
       
   },
   {
@@ -166,6 +189,8 @@ const coursesData = [
     level: "Beginner",
     language: "English",
     mode: "Offline",
+    lessons: "30",
+    students: "2.9k+",
     image: javaImg,
     syllabus: [
         "Learn the syntax and structure of Java including variables, data types, control statements, and loops.",
@@ -190,6 +215,12 @@ const coursesData = [
   "Learn about testing in Java using JUnit and Mockito frameworks."
       ]
       ,
+      points: [
+        "OOP Concepts", "Data Types", "Control Statements", "Arrays",
+        "Methods", "Exception Handling", "Collections", "Multithreading",
+        "File Handling", "JDBC", "Swing/AWT", "Project Building"
+      ]
+      
   },
 
   { id: "web-development",
@@ -200,6 +231,8 @@ const coursesData = [
     level: "Beginner to Intermediate",
     language: "English",
     mode: "Online",
+    lessons: "30",
+    students: "2.9k+",
     image: webDevImg,
     syllabus: [
         "Learn the foundational technologies of the web including semantic HTML tags, CSS selectors and properties, and JavaScript syntax and logic for building interactive features.",
@@ -216,7 +249,13 @@ const coursesData = [
         "Deploy your website using platforms like GitHub Pages, Netlify, or Vercel, and make your work accessible to the public.",
         "Get a high-level understanding of component-based architecture and how modern frameworks like React simplify dynamic UIs.",
         "Build and deploy a complete portfolio website demonstrating all the skills learned throughout the course."
+      ],
+      points: [
+        "HTML", "CSS", "JavaScript", "Responsive Design", "Bootstrap",
+        "DOM Manipulation", "APIs", "Fetch/AJAX", "jQuery", "React Intro",
+        "Hosting", "Debugging"
       ]
+      
       
       
   },
@@ -229,6 +268,8 @@ const coursesData = [
     level: "Intermediate",
     language: "English",
     mode: "Online",
+    lessons: "30",
+    students: "2.9k+",
     image: mobileDevImg,
     syllabus: [
         "Understand the fundamentals of mobile operating systems and development environments for Android and iOS.",
@@ -242,6 +283,13 @@ const coursesData = [
         "Learn mobile optimization and performance enhancement techniques.",
         "Build a capstone project: a fully functional mobile application with navigation, API integration, and state management."
       ],
+      points: [
+        "Mobile App Architecture", "UI/UX Design Principles", "React Native Basics",
+        "Flutter Overview", "Android Development with Kotlin", "iOS Development with Swift",
+        "Cross-platform Tools", "Working with APIs", "Local & Cloud Storage",
+        "Performance Optimization", "App Testing Strategies", "Publishing to Play Store & App Store"
+      ]
+      
       
   },
   
@@ -254,6 +302,8 @@ const coursesData = [
     level: "Advanced",
     language: "English",
     mode: "Hybrid",
+    lessons: "30",
+    students: "2.9k+",
     image: devopsImg,
     syllabus: [
         "Understand the principles of DevOps including collaboration, automation, and continuous delivery.",
@@ -267,6 +317,12 @@ const coursesData = [
         "Implement log monitoring with ELK Stack for debugging and alerts.",
         "Deploy a full CI/CD pipeline to automate testing and deployment for a real-world app."
       ],
+      points: [
+        "CI/CD", "Jenkins", "Git & GitHub", "Docker", "Kubernetes",
+        "Ansible", "Terraform", "Monitoring", "AWS Integration", "DevOps Lifecycle",
+        "Pipelines", "Infrastructure as Code"
+      ]
+      
       
   },
   
@@ -279,6 +335,8 @@ const coursesData = [
     level: "Beginner",
     language: "English",
     mode: "Online",
+    lessons: "30",
+    students: "2.9k+",
     image: awsImg,
     syllabus: [
         "Understand the basics of cloud computing and core AWS services like EC2, S3, and IAM.",
@@ -292,6 +350,10 @@ const coursesData = [
         "Implement serverless functions using AWS Lambda and trigger them through S3 or API Gateway.",
         "Deploy a fully functional project using multiple AWS services demonstrating real-world scenarios."
       ],
+      points: [
+        "EC2", "ELB", "EBS", "Auto Scaling", "S3", "CloudWatch",
+        "IAM", "CloudTrail", "VPC", "SNS", "RDS", "Elastic Beanstalk"
+      ],
       
   },
   {
@@ -303,6 +365,8 @@ const coursesData = [
     level: "Intermediate",
     language: "English",
     mode: "Online",
+    lessons: "30",
+    students: "2.9k+",
     image: reactImg,
     syllabus: [
         "Understand the fundamentals of React including JSX, components, props, and state.",
@@ -316,6 +380,11 @@ const coursesData = [
         "Deploy React applications to platforms like Vercel, Netlify, or GitHub Pages.",
         "Complete a capstone project like a task manager, e-commerce UI, or portfolio app using modern React practices."
       ],
+      points: [
+        "JSX", "Components", "State & Props", "React Hooks", "Routing",
+        "Forms", "Redux", "React Context", "Lifecycle Methods", "API Integration",
+        "Code Splitting", "Project Deployment"
+      ],
       
   },
   {
@@ -327,6 +396,8 @@ const coursesData = [
     level: "Intermediate",
     language: "English",
     mode: "Hybrid",
+    lessons: "30",
+    students: "2.9k+",
     image: reactNativeImg,
     syllabus: [
         "Get introduced to mobile development with React Native and understand its architecture and native components.",
@@ -340,6 +411,13 @@ const coursesData = [
         "Debug apps using Chrome DevTools, Flipper, and React Native Debugger.",
         "Build and publish apps on Google Play Store and Apple App Store with proper configuration."
       ],
+      points: [
+        "React Native Basics", "Components & Props", "State Management",
+        "Navigation (React Navigation)", "Styling", "Handling User Input",
+        "APIs & Axios", "Using Native Modules", "Expo vs CLI",
+        "Testing Mobile Apps", "Debugging Tools", "Publishing Apps to Stores"
+      ]
+      
       
   },
   {
@@ -351,6 +429,8 @@ const coursesData = [
     level: "Beginner to Intermediate",
     language: "English",
     mode: "Online",
+    lessons: "30",
+    students: "2.9k+",
     image: azureImg,
     syllabus: [
         "Understand the core concepts of cloud computing and how Azure fits into the cloud ecosystem.",
@@ -364,6 +444,13 @@ const coursesData = [
         "Monitor and troubleshoot applications with Azure Monitor, Log Analytics, and Application Insights.",
         "Deploy and manage containerized applications using Azure Kubernetes Service (AKS)."
       ],
+      points: [
+        "Azure Fundamentals", "Virtual Machines", "App Services", "Azure Functions",
+        "Resource Groups", "Azure Portal", "Azure CLI", "Blob Storage",
+        "Azure Active Directory", "ARM Templates", "Monitoring with Azure Monitor",
+        "Deploying Web Apps"
+      ]
+      
       
   },
   
@@ -376,6 +463,8 @@ const coursesData = [
   level: "Beginner",
   language: "English",
   mode: "Offline",
+  lessons: "30",
+  students: "2.9k+",
  image: hrImg, // Add image path
   syllabus: [
     "Explore the complete employee lifecycle from recruitment to exit management with real-world examples.",
@@ -383,7 +472,13 @@ const coursesData = [
     "Understand performance appraisals, feedback cycles, and employee engagement techniques.",
     "Hands-on HRMS tools demo, leave/attendance management systems, and generating reports.",
     "Get insights into managing diversity, workplace culture, and conflict resolution effectively."
+  ],
+  points: [
+    "Recruitment", "Onboarding", "HR Policies", "Employee Engagement",
+    "Payroll Basics", "Compliance", "HRMS Tools", "Training & Development",
+    "Leave Management", "Appraisals", "Exit Formalities", "Communication Skills"
   ]
+  
 }
 ,
   {
@@ -395,6 +490,8 @@ const coursesData = [
     level: "Beginner",
     language: "English & Hindi",
     mode: "Offline",
+    lessons: "30",
+    students: "2.9k+",
     image: personalityImg,
     syllabus: [
         "Learn how to enhance your personal and professional image through self-awareness and emotional intelligence.",
@@ -409,6 +506,13 @@ const coursesData = [
         "Receive personalized feedback to overcome shyness, anxiety, and improve self-expression."
       ]
       ,
+      points: [
+        "Self-Awareness", "Confidence Building", "Body Language",
+        "Interpersonal Skills", "Emotional Intelligence", "Time Management",
+        "Public Speaking", "Stress Management", "Goal Setting",
+        "Positive Attitude", "Motivation", "Decision Making"
+      ]
+      
   },
   {
     id: "office communication",
@@ -419,6 +523,8 @@ const coursesData = [
     level: "Beginner",
     language: "English",
     mode: "Online",
+    lessons: "30",
+    students: "2.9k+",
     image: officeCommImg,
     syllabus: [
         "Understand workplace communication fundamentals including verbal, non-verbal, and written forms.",
@@ -433,6 +539,13 @@ const coursesData = [
         "Work on real-world simulations like customer interactions, status updates, and meeting summaries."
       ]
       ,
+      points: [
+        "Verbal Communication", "Email Etiquette", "Presentation Skills",
+        "Telephone Skills", "Listening Skills", "Non-verbal Communication",
+        "Business Writing", "Handling Meetings", "Negotiation Techniques",
+        "Clarity & Brevity", "Feedback Techniques", "Team Communication"
+      ]
+      
   },
   {
     id: "recruitment techniques",
@@ -443,6 +556,8 @@ const coursesData = [
     level: "Intermediate",
     language: "English",
     mode: "Hybrid",
+    lessons: "30",
+    students: "2.9k+",
     image: recruitmentImg,
     syllabus: [
         "Understand the end-to-end recruitment cycle including job analysis, posting, screening, and selection.",
@@ -457,6 +572,13 @@ const coursesData = [
         "Participate in mock recruitment drives to practice screening, interviewing, and final selection."
       ]
       ,
+      points: [
+        "Job Analysis", "Sourcing Methods", "Screening & Shortlisting",
+        "Interview Techniques", "Assessment Tools", "Candidate Experience",
+        "HRMS Tools Usage", "Behavioral Interviews", "Campus Hiring",
+        "Offer Management", "Onboarding Process", "Recruitment Metrics"
+      ]
+      
   },
 ];
 
@@ -539,7 +661,7 @@ const CourseDetails = () => {
         {/* Image Section */}
 
         
-        <div className="flex items-center gap-4 w-full md:w-1/2">
+        <div className="flex items-center gap-4 w-full md:w-1/2 mt-30">
           {currentCourse.image && (
             <img
               src={currentCourse.image}
@@ -552,19 +674,116 @@ const CourseDetails = () => {
 
         {/* Meta Info Section */}
         <div className="flex flex-col justify-between w-full">
-          <h1 className="text-3xl font-bold mb-4">{currentCourse.title}</h1>
-          <p className="mb-6">{currentCourse.description}</p>
+          <h1 className="text-3xl font-bold mb-4 text-center">{currentCourse.title}</h1>
+          <p className="mb-6 ">{currentCourse.description}</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-base">
-            <p><strong className="text-green-600">Duration:</strong> {currentCourse.duration}</p>
-            <p><strong className="text-green-600">Instructor:</strong> <span className="text-black">{currentCourse.instructor}</span></p>
-            <p><strong className="text-green-600">Level:</strong> <span className="text-black">{currentCourse.level}</span></p>
-            <p><strong className="text-green-600">Language:</strong> <span className="text-black">{currentCourse.language}</span></p>
-            <p><strong className="text-green-600">Mode:</strong> <span className="text-black">{currentCourse.mode}</span></p>
-            
-          </div>
+
+          <div className="bg-white rounded-2xl shadow-xl p-8 w-[700px] mx-auto ">
+
+  <h2 className="text-2xl font-bold text-gray-800 mb-8 border-b pb-4">📘 Course Information</h2>
+
+  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-gray-800 text-lg">
+    <div className="flex items-center gap-4">
+      <Clock className="h-8 w-8 text-green-600" />
+      <div>
+        <span className="font-semibold text-gray-700">Duration:</span>
+        <div className="text-gray-600">{currentCourse.duration}</div>
+      </div>
+    </div>
+
+    <div className="flex items-center gap-4">
+      <BookOpen className="h-8 w-8 text-green-600" />
+      <div>
+        <span className="font-semibold text-gray-700">Lessons:</span>
+        <div className="text-gray-600">{currentCourse.lessons}</div>
+      </div>
+    </div>
+
+    <div className="flex items-center gap-4">
+      <Users className="h-8 w-8 text-green-600" />
+      <div>
+        <span className="font-semibold text-gray-700">Students:</span>
+        <div className="text-gray-600">{currentCourse.students}</div>
+      </div>
+    </div>
+
+    <div className="flex items-center">
+      <User className="h-8 w-8 text-green-600" />
+      <div>
+        <span className="font-semibold text-gray-600"> Instructor:</span>
+        <div className="text-gray-500">{currentCourse.instructor}</div>
+      </div>
+    </div>
+
+    <div className="flex items-center gap-4">
+      <Layers className="h-8 w-8 text-green-600" />
+      <div>
+        <span className="font-semibold text-gray-700">Level:</span>
+        <div className="text-gray-600">{currentCourse.level}</div>
+      </div>
+    </div>
+
+    <div className="flex items-center gap-4">
+      <Languages className="h-8 w-8 text-green-600" />
+      <div>
+        <span className="font-semibold text-gray-700"> Language:</span>
+        <div className="text-gray-600">{currentCourse.language}</div>
+      </div>
+    </div>
+
+    <div className="flex items-center gap-4">
+      <MonitorSmartphone className="h-8 w-8 text-green-600" />
+      <div>
+        <span className="font-semibold text-gray-700">Mode:</span>
+        <div className="text-gray-600">{currentCourse.mode}</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+ 
+
+ 
+  
+
+  
+</div>
+
           
         </div>
       </div>
+
+      {/* <div className="bg-green-100 border-l-4 border-green-500 text-green-900 p-4 rounded-xl mb-8 shadow-lg">
+  <h2 className="text-2xl font-bold mb-4">🧠 What You'll Learn</h2>
+  <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-0 pl-6 list-disc ml-10 ">
+    <li className="leading-tight pr-50 text-2xl">EC2</li>
+    <li className="leading-tight pr-50 text-2xl">ELB</li>
+    <li className="leading-tight pr-50 text-2xl">EBS</li>
+    <li className="leading-tight pr-20 text-2xl">Auto Scaling</li>
+    <li className="leading-tight pr-50 text-2xl"><span style={{marginRight:"15px"}}>S3</span></li>
+    <li className="leading-tight pr-50 text-2xl"> CloudWatch</li>
+    <li className="leading-tight pr-50 text-2xl">IAM</li>
+    <li className="leading-tight pr-50 text-2xl"><span style={{marginLeft:"15px"}}>CloudTrail</span></li>
+    <li className="leading-tight pr-50 text-2xl">VPC</li>
+    <li className="leading-tight pr-50 text-2xl">SNS</li>
+    <li className="leading-tight pr-50 text-2xl">RDS</li>
+    <li className="leading-tight pr-10 text-2xl">Elastic Beanstalk</li>
+  </ul>
+</div> */}
+  {/* What You'll Learn Section */}
+  {currentCourse.points && currentCourse.points.length > 0 && (
+        <div className="bg-green-100 border-l-4 border-green-500 text-green-900 p-4 rounded-xl mb-8 shadow-lg">
+          <h2 className="text-2xl font-bold mb-4">🧠 What You'll Learn</h2>
+          <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-1 pl-6 list-disc ml-6">
+            {currentCourse.points.map((point, idx) => (
+              <li key={idx} className="leading-tight text-base">{point}</li>
+            ))}
+          </ul>
+        </div>
+      )}
 
       {/* Syllabus Section */}
       <h2 className="text-2xl font-semibold mb-3 border-b border-black pb-2 text-left text-red-600">Syllabus</h2>
