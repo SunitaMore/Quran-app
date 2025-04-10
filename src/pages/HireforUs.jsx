@@ -9,7 +9,7 @@ import { NavLink } from 'react-router-dom';
 
 const jobRoles = [
   {
-    title: "Web Development",
+    title: "Web Developer",
     category: "Development",
     experience: "2–5 years",
     candidates: "28 Candidates",
@@ -19,7 +19,7 @@ const jobRoles = [
     image: ItCourse,
   },
   {
-    title: "Digital Marketing Specialist",
+    title: "Digital Marketer",
     category: "Marketing",
     experience: "1–3 years",
     candidates: "16 Candidates",
@@ -39,7 +39,7 @@ const jobRoles = [
     image: CloudEngineer,
   },
   {
-    title: "Data Science",
+    title: "Data scientist",
     category: "Tech",
     experience: "1–4 years",
     candidates: "21 Candidates",
