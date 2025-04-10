@@ -5,6 +5,7 @@ import { Router, Routes, Route } from 'react-router-dom';
 import AboutUs from "./pages/AboutUs"
 import Faculty from "./pages/Faculty";
 import HandProject from "./pages/HandProject"
+import ProjectDetails from './pages/ProjectDetails';
 import HireforUs from "./pages/HireforUs"
 import ApplyNow from "./model/ApplyNow";
 import Blog from "./pages/Blog";
@@ -30,6 +31,7 @@ function App() {
          {/* Detailed course information page */}
          <Route path="/course/:courseId" element={<CourseDetails />} />
          <Route path="/courses" element={<FeaturedCourse />} />
+         <Route path="/project/:title" element={<ProjectDetails />} />
   
 
       
