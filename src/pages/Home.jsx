@@ -78,9 +78,6 @@ export default function App() {
     }
   }, [location, navigate]);
 
-  const handleScrollTo = (sectionId) => {
-    navigate("./../components/", { state: { scrollTo: sectionId } });
-  };
 
   return (
     <div className="flex min-h-screen flex-col">
@@ -114,12 +111,28 @@ export default function App() {
                     </p>
                   </div>
                   <div className="flex flex-col gap-3 min-[400px]:flex-row pt-2 justify-between mx-10">
-                    <NavLink to="/courses" className=" h-12 text-lg shadow-lg hover:bg-gray-300 p-4 flex items-center rounded-xl">
+                  <button
+                      onClick={() => {
+                        const element = document.getElementById("course");
+                        if (element) {
+                          element.scrollIntoView({ behavior: "smooth" });
+                        }
+                      }}
+                      className="h-12 text-lg shadow-lg   hover:text-white cursor-pointer hover:bg-black p-4 flex items-center rounded-xl"
+                    >
                       Explore Courses
-                    </NavLink>
-                    <Link to="/" onClick={() => handleScrollTo("testimonials")} className=" h-12 text-lg shadow-lg bg-black text-white hover:text-black hover:bg-white p-4 flex items-center rounded-xl ">
+                    </button>
+                    <button
+                      onClick={() => {
+                        const element = document.getElementById("testimonials");
+                        if (element) {
+                          element.scrollIntoView({ behavior: "smooth" });
+                        }
+                      }}
+                      className="h-12 text-lg shadow-lg bg-black cursor-pointer text-white hover:text-black hover:bg-white p-4 flex items-center rounded-xl"
+                    >
                       Success Stories
-                    </Link>
+                    </button>
                   </div>
                   <div className="flex flex-wrap items-center gap-4 pt-2 text-sm">
                     <div className="flex items-center gap-2">
@@ -240,7 +253,7 @@ export default function App() {
           </div>
         </section>
         {/* Contact Us */}
-        <Element name="testimonials">
+        <Element name="">
           {" "}
           <ContactUs />{" "}
         </Element>
