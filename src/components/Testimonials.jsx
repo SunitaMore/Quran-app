@@ -193,6 +193,7 @@ const testimonials = [
     content: "The web development course completely transformed my career. I went from knowing nothing about coding to landing a full-time developer job in just 6 months. When I started, even basic HTML tags felt intimidating. But the course structure made everything approachable — from the fundamentals of web design to building complex applications with JavaScript, React, and Node.js Each module built upon the last, and the hands-on projects helped solidify every concept. I especially appreciated the real-world assignments — like building a weather app, an e-commerce site, and integrating APIs — which made me feel like I was already working in the industry.",
 
     avatar: userIcon,
+    linkedin: "#", // Add this line
   },
   {
     name: "Michael Chen",
@@ -200,6 +201,8 @@ const testimonials = [
     content:
       "The data science curriculum was comprehensive and practical. Building a portfolio with real projects gave me a competitive edge during job applications. I wasn’t just learning theory — I was applying concepts like regression analysis, machine learning, and data visualization using real datasets.By the end of the course, I had a polished portfolio, a GitHub profile full of meaningful work, and a renewed sense of confidence. Within weeks of graduating, I landed a data analyst role and have been thriving ever since.",
     avatar: userIcon,
+    linkedin: "#", // Add this line
+
   },
   {
     name: "Emily Rodriguez",
@@ -207,6 +210,7 @@ const testimonials = [
     content:
       "The digital marketing course provided me with strategies I could immediately apply at work. It helped elevate our brand presence significantly. From SEO fundamentals to advanced social media campaigns, the curriculum was well-structured and aligned with current industry practices.Weekly feedback from mentors helped me refine my approach and build confidence in running A/B tests, optimizing ads, and using tools like Google Analytics and Meta Ads Manager effectively. I even revamped our company’s entire email marketing funnel based on what I learned.",
     avatar: userIcon,
+    linkedin: "#", // Add this line
   },
 ];
 
@@ -253,14 +257,16 @@ const Testimonial = () => {
                                 {/* Name with LinkedIn Icon */}
                                 <div className="flex items-center space-x-2 text-gray-900 text-2xl font-semibold">
                                   <span>{testimonial.name}</span>
-                                  <a
-                                    href={testimonial.linkedin}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="text-blue-600"
-                                  >
-                                    <GrLinkedin />
-                                  </a>
+                                  {testimonial.linkedin && (
+  <a
+    href={testimonial.linkedin}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-blue-600 hover:text-blue-800 transition"
+  >
+    <GrLinkedin />
+  </a>
+)}
 
 
                                 </div>
@@ -316,7 +322,7 @@ const Testimonial = () => {
             <img
               src={student}
               alt="student"
-              className="rounded-lg w-full h-[500px] object-cover"
+              className="rounded-lg w-full min-h-auto object-cover"
 
 
             />

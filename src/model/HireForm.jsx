@@ -29,16 +29,16 @@ export default function HireForm() {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-  
+
     // Match fields like requirements.0.techStack
     const match = name.match(/^requirements\.(\d+)\.(\w+)$/);
-  
+
     if (match) {
       const index = parseInt(match[1], 10);
       const subField = match[2];
       const updatedRequirements = [...formData.requirements];
       updatedRequirements[index][subField] = value;
-  
+
       setFormData((prevData) => ({
         ...prevData,
         requirements: updatedRequirements,
@@ -86,7 +86,11 @@ export default function HireForm() {
     e.preventDefault();
 
     // Validate location field if needed
-    if ((formData.workLocationType === "hybrid" || formData.workLocationType === "on-site") && !formData.companyLocation) {
+    if (
+      (formData.workLocationType === "hybrid" ||
+        formData.workLocationType === "on-site") &&
+      !formData.companyLocation
+    ) {
       setSubmitStatus({
         success: false,
         message: "Please provide company location for hybrid or on-site work",
@@ -137,6 +141,23 @@ export default function HireForm() {
       ],
     });
   };
+  const handleChangeNumber = (e) => {
+    const { name, value } = e.target;
+
+    if (name === "companyPhone") {
+      // Only allow digits
+      const numericValue = value.replace(/[^0-9]/g, "");
+      setFormData((prevData) => ({
+        ...prevData,
+        [name]: numericValue,
+      }));
+    } else {
+      setFormData((prevData) => ({
+        ...prevData,
+        [name]: value,
+      }));
+    }
+  };
 
   return (
     <div className="max-w-4xl mx-auto p-6 bg-white rounded-lg shadow-lg mt-6">
@@ -182,7 +203,7 @@ export default function HireForm() {
                 className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
             </div>
-            
+
             {/* Company Email */}
             <div className="col-span-6">
               <label
@@ -245,20 +266,22 @@ export default function HireForm() {
               <label
                 htmlFor="companyPhone"
                 className="block text-sm font-medium text-gray-700 mb-1"
+                type="Number"
               >
                 Phone Number <span className="text-red-600">*</span>
               </label>
               <input
+                maxLength="10"
                 type="tel"
                 id="companyPhone"
                 name="companyPhone"
                 value={formData.companyPhone}
-                onChange={handleChange}
+                onChange={handleChangeNumber}
                 required
                 className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
             </div>
-            
+
             {/* Work Location Type */}
             <div className="col-span-6">
               <label
@@ -283,7 +306,8 @@ export default function HireForm() {
             </div>
 
             {/* Conditional Company Location */}
-            {(formData.workLocationType === "hybrid" || formData.workLocationType === "on-site") && (
+            {(formData.workLocationType === "hybrid" ||
+              formData.workLocationType === "on-site") && (
               <div className="col-span-6">
                 <label
                   htmlFor="companyLocation"
@@ -297,7 +321,10 @@ export default function HireForm() {
                   name="companyLocation"
                   value={formData.companyLocation}
                   onChange={handleChange}
-                  required={formData.workLocationType === "hybrid" || formData.workLocationType === "on-site"}
+                  required={
+                    formData.workLocationType === "hybrid" ||
+                    formData.workLocationType === "on-site"
+                  }
                   className="w-full px-4 py-2 border h-10 border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
               </div>
@@ -367,7 +394,7 @@ export default function HireForm() {
                   placeholder="e.g., React, Node.js, MongoDB"
                 />
               </div>
-              
+
               {/* Contact Email */}
               <div className="col-span-6">
                 <label className="block text-sm font-medium text-gray-700 mb-1">
@@ -382,7 +409,7 @@ export default function HireForm() {
                   className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
               </div>
-              
+
               {/* Checklist */}
               <div className="col-span-12">
                 <label className="block text-sm font-medium text-gray-700 mb-1">

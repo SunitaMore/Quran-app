@@ -1,11 +1,16 @@
-
-
-import React, { useState } from 'react'
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "../components/ui-components";
-import { Button } from "../components/ui-components";
-import { Badge } from "../components/ui-components";
-import { BookOpen, Clock, Users, ArrowRight, Star } from "lucide-react"
-import { NavLink } from 'react-router-dom';
+import React, { useState, useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+  Button,
+  Badge,
+} from '../components/ui-components';
+import { Clock, BookOpen, Users, Star } from 'lucide-react';
 import webDevImg from '../assets/images/web_dev.png';
 import mobdevImg from '../assets/images/mobile_dev.png';
 import pythonImg from '../assets/images/python.png';
@@ -15,7 +20,6 @@ import awsImg from '../assets/images/aws.png';
 import reactImg from '../assets/images/react.png';
 import reactNativeImg from '../assets/images/react_native.png';
 import azureImg from '../assets/images/azure.png';
-
 import hrImg from '../assets/images/hr.png';
 import personalityImg from '../assets/images/personality.png';
 import communicationImg from '../assets/images/communication.png';
@@ -23,8 +27,7 @@ import recruitmentImg from '../assets/images/recruitment.png';
 import meanStackImg from '../assets/images/mean.png';
 import mernStackImg from '../assets/images/mern.png';
 import { Link } from 'react-router-dom';
-
-
+import { NavLink } from 'react-router-dom';
 
 const itCourses = [
 
@@ -221,6 +224,8 @@ const nonItCourses = [
 
 const FeaturedCourse = () => {
   const [activeTab, setActiveTab] = useState("All");
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, amount: 0.2 });
 
   const allCourses = [...itCourses, ...nonItCourses];
 
@@ -232,87 +237,94 @@ const FeaturedCourse = () => {
 
   const filteredCourses = getFilteredCourses();
 
-  return (
-    <div>{/* Featured Courses */}
+  const cardVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: (i) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: i * 0.1,
+        duration: 0.5,
+        ease: "easeOut",
+      },
+    }),
+  };
 
+  return (
     <section id="course" className="w-full py-12 md:py-24 bg-muted/50">
-      <div className="container px-4 md:px-6">
+      <div className="container px-4 md:px-6" ref={ref}>
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <div className="space-y-2">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Featured Courses</h2>
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+              Featured Courses
+            </h2>
             <p className="max-w-[900px] text-muted-foreground md:text-xl">
               Explore our most popular courses and start your learning journey today.
             </p>
           </div>
 
           {/* Tabs */}
-          {/* Fancy Tabs */}
           <div className="relative inline-flex p-1 bg-gray-200 dark:bg-gray-800 rounded-full mt-6 shadow-inner">
-  {["All", "IT", "Non-IT"].map((tab) => (
-    <button
-      key={tab}
-      onClick={() => setActiveTab(tab)}
-      className={`relative z-10 px-5 py-2 text-sm font-semibold cursor-pointer rounded-full transition-all duration-300 ease-in-out focus:outline-none ${
-        activeTab === tab
-          ? "bg-white text-blue-600 shadow-md"
-          : "text-gray-600 hover:text-blue-500 hover:bg-gray-300 dark:hover:bg-gray-700"
-      }`}
-    >
-      {tab}
-    </button>
-  ))}
-</div>
-
-
+            {["All", "IT", "Non-IT"].map((tab) => (
+              <button
+                key={tab}
+                onClick={() => setActiveTab(tab)}
+                className={`relative z-10 px-5 py-2 text-sm font-semibold cursor-pointer rounded-full transition-all duration-300 ease-in-out focus:outline-none ${
+                  activeTab === tab
+                    ? "bg-white text-blue-600 shadow-md"
+                    : "text-gray-600 hover:text-blue-500 hover:bg-gray-300 dark:hover:bg-gray-700"
+                }`}
+              >
+                {tab}
+              </button>
+            ))}
+          </div>
         </div>
 
-        {/* Courses Grid */}
+        {/* Animated Course Grid */}
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mt-8">
           {filteredCourses.map((course, index) => (
-            <Card
-            key={index}
-            className="overflow-hidden transition-all duration-300 transform hover:scale-105 hover:shadow-lg cursor-pointer"
-          >
-            <div className="relative">
-              <img
-                src={course.image || "/placeholder.svg"}
-                alt={course.title}
-                className="object-cover w-full h-48"
-              />
-
-
-              <Badge className="absolute top-2 right-2 bg-white text-black border border-gray-300 rounded px-2 py-0.5 text-xs font-medium shadow-sm">
-                {course.category}
-              </Badge>
-            </div>
-
-            
-            <CardHeader className="p-4 bg-white">
-              
-              <CardTitle className="line-clamp-1">{course.title}</CardTitle>
-              
-
-              <CardDescription className="line-clamp-2">{course.description}</CardDescription>
-              
-            </CardHeader>
-            
-            <CardContent className="p-4 pt-0 bg-white">
-              <div className="flex items-center gap-4 text-sm text-muted-foreground">
-                <div className="flex items-center gap-1">
-                  <Clock className="h-4 w-4" />
-                  <span>{course.duration}</span>
+            <motion.div
+              key={index}
+              custom={index}
+              variants={cardVariants}
+              initial="hidden"
+              animate={isInView ? "visible" : "hidden"}
+            >
+              <Card className="overflow-hidden transition-all duration-300 transform hover:scale-105 hover:shadow-lg cursor-pointer">
+                <div className="relative">
+                  <img
+                    src={course.image || "/placeholder.svg"}
+                    alt={course.title}
+                    className="object-cover w-full h-48"
+                  />
+                  <Badge className="absolute top-2 right-2 bg-white text-black border border-gray-300 rounded px-2 py-0.5 text-xs font-medium shadow-sm">
+                    {course.category}
+                  </Badge>
                 </div>
-                <div className="flex items-center gap-1">
-                  <BookOpen className="h-4 w-4" />
-                  <span>{course.lessons} lessons</span>
-                </div>
-                <div className="flex items-center gap-1">
-                  <Users className="h-4 w-4" />
-                  <span>{course.students}</span>
-                </div>
-              </div>
-            </CardContent>
-            <CardFooter className="p-4 flex flex-col items-start justify-between bg-white">
+
+                <CardHeader className="p-4 bg-white">
+                  <CardTitle className="line-clamp-1">{course.title}</CardTitle>
+                  <CardDescription className="line-clamp-2">{course.description}</CardDescription>
+                </CardHeader>
+
+                <CardContent className="p-4 pt-0 bg-white">
+                  <div className="flex items-center gap-4 text-sm text-muted-foreground">
+                    <div className="flex items-center gap-1">
+                      <Clock className="h-4 w-4" />
+                      <span>{course.duration}</span>
+                    </div>
+                    <div className="flex items-center gap-1">
+                      <BookOpen className="h-4 w-4" />
+                      <span>{course.lessons} lessons</span>
+                    </div>
+                    <div className="flex items-center gap-1">
+                      <Users className="h-4 w-4" />
+                      <span>{course.students}</span>
+                    </div>
+                  </div>
+                </CardContent>
+                <CardFooter className="p-4 flex flex-col items-start justify-between bg-white">
   {/* Rating Section - Move above the price */}
   <div className="flex items-center mb-2">
     <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
@@ -347,25 +359,12 @@ const FeaturedCourse = () => {
     </NavLink>
   </div>
 </CardFooter>
-
-            
-          </Card>
-          
+              </Card>
+            </motion.div>
           ))}
         </div>
-        {/* <button className="see-more-btn">{course.seeMore}</button> */}
-
-        <div className="flex justify-center mt-8">
-  <Link to="/courses">
-    {/* <Button variant="outline" className="gap-1">
-      View All Courses <ArrowRight className="h-4 w-4" />
-    </Button> */}
-  </Link>
-</div>
-
       </div>
     </section>
-    </div>
   );
 };
 
