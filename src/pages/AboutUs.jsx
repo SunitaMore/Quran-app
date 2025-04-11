@@ -36,19 +36,19 @@ function AboutPage() {
   const testimonials = [
     {
       quote:
-        "IT Course completely transformed my career. I went from a non-technical background to landing a job as a full-stack developer within 6 months of completing their program.",
+        "Vertex Institute Of Technology completely transformed my career. I went from a non-technical background to landing a job as a full-stack developer within 6 months of completing their program.",
       name: "Alex Rivera",
       title: "Software Developer at TechCorp",
     },
     {
       quote:
-        "The practical approach to learning at IT Course gave me the confidence to apply for positions I previously thought were out of reach. Their career support was invaluable.",
+        "The practical approach to learning at Vertex Institute Of Technology gave me the confidence to apply for positions I previously thought were out of reach. Their career support was invaluable.",
       name: "Emma Thompson",
       title: "Data Analyst at DataTech Solutions",
     },
     {
       quote:
-        "As someone switching careers in my 30s, I was worried about breaking into tech. IT Course provided the perfect blend of theory and practice that employers were looking for.",
+        "As someone switching careers in my 30s, I was worried about breaking into tech. Vertex Institute Of Technology provided the perfect blend of theory and practice that employers were looking for.",
       name: "David Kim",
       title: "Network Administrator at Global Systems",
     },
@@ -61,7 +61,7 @@ function AboutPage() {
         <div className="container mx-auto px-4 md:px-6">
           <div className="flex flex-col items-center space-y-4 text-center">
             <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl">
-              About IT Course
+              About Vertex Institute Of Technology
             </h1>
             <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl">
               Empowering the next generation of IT professionals through quality education and practical training.
@@ -78,7 +78,7 @@ function AboutPage() {
               <div className="inline-block rounded-lg bg-gray-100 px-3 py-1 text-sm">Our Story</div>
               <h2 className="text-3xl font-bold tracking-tighter md:text-4xl">Building IT Excellence Since 2015</h2>
               <p className="text-gray-500 md:text-lg">
-                IT Course was founded with a simple mission: to bridge the gap between theoretical knowledge and
+                Vertex Institute Of Technology was founded with a simple mission: to bridge the gap between theoretical knowledge and
                 practical skills in the IT industry. What started as a small training center has grown into a
                 comprehensive educational platform serving thousands of students worldwide.
               </p>
@@ -91,7 +91,7 @@ function AboutPage() {
             <div className="flex justify-center">
               <img
                 src= {AboutImage}
-                alt="IT Course campus"
+                alt="Vertex Institute Of Technology campus"
                 className="rounded-lg object-cover mt-14"
               />
             </div>
@@ -105,7 +105,7 @@ function AboutPage() {
           <div className="flex flex-col items-center space-y-4 text-center mb-12">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Our Mission & Values</h2>
             <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl">
-              Guiding principles that drive everything we do at IT Course.
+              Guiding principles that drive everything we do at Vertex Institute Of Technology.
             </p>
           </div>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -261,7 +261,7 @@ function AboutPage() {
           <div className="flex flex-col items-center space-y-4 text-center mb-12">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Student Success Stories</h2>
             <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl">
-              Hear from our graduates who have transformed their careers through IT Course.
+              Hear from our graduates who have transformed their careers through Vertex Institute Of Technology.
             </p>
           </div>
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
@@ -286,7 +286,7 @@ function AboutPage() {
               Ready to Start Your IT Journey?
             </h2>
             <p className="mx-auto max-w-[700px]  md:text-xl">
-              Join thousands of students who have advanced their careers with IT Course.
+              Join thousands of students who have advanced their careers with Vertex Institute Of Technology.
             </p>
             
           </div>

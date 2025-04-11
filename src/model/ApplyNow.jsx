@@ -449,9 +449,9 @@ export default function ApplicationForm() {
           </label>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {/* IT Courses */}
+            {/* Vertex Institute Of Technology */}
             <div className="col-span-2">
-              <h3 className="text-sm font-semibold  mb-2">IT Courses</h3>
+              <h3 className="text-sm font-semibold  mb-2">Vertex Institute Of Technology</h3>
               <div className="grid grid-cols-2 gap-2">
                 {courseOptions.map((course) => (
                   <div key={course.id} className="flex items-center">
@@ -475,9 +475,9 @@ export default function ApplicationForm() {
               </div>
             </div>
 
-            {/* Non-IT Courses */}
+            {/* Non-Vertex Institute Of Technology */}
             <div>
-              <h3 className="text-sm font-semibold  mb-2">Non-IT Courses</h3>
+              <h3 className="text-sm font-semibold  mb-2">Non-Vertex Institute Of Technology</h3>
               <div className="grid grid-cols-1 gap-2">
                 {nonItCourseOptions.map((course) => (
                   <div key={course.id} className="flex items-center">

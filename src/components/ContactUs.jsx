@@ -22,7 +22,7 @@ const ContactUs = () => {
     location: location,
     subject: subject,
     to_email : "shreyas5400m@gmail.com",
-    to_name : "IT Course Team",
+    to_name : "Vertex Institute Of Technology Team",
   }
 
   //  key and ID's
@@ -105,7 +105,7 @@ const ContactUs = () => {
               Have questions or need help? Fill out the form and our team will get back to you shortly.
             </p>
             <div className="space-y-4">
-              <p><strong>Email:</strong> support@itcourses.com</p>
+              <p><strong>Email:</strong> inqury@vertexinstitute.co.in</p>
               <p><strong>Phone:</strong>+91 97673527243</p>
               <p><strong>Location:</strong> 123 Tech Street, Silicon Valley, Pune</p>
             </div>

@@ -100,8 +100,8 @@ export default function App() {
                     <Badge className="inline-block px-4 py-1.5 text-sm font-medium rounded-full bg-primary/10 text-primary hover:bg-primary/20 transition-colors" variant="secondary">
                       ✨ New Courses Available
                     </Badge>
-                    <h1 className="text-4xl font-bold tracking-tight sm:text-5xl xl:text-6xl/none">
-                      IT COURSE
+                    <h1 className="text-4xl font-bold tracking-tight sm:text-5xl  uppercase">
+                    vertex institute of technology
                     </h1>
                     <p className="text-xl text-foreground/80">
                       "Build. Code. Lead. Your IT Journey Starts Here."
@@ -205,7 +205,7 @@ export default function App() {
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-                  Why Choose IT Course
+                  Why Choose Vertex Institute Of Technology
                 </h2>
                 <p className="max-w-[900px] text-muted-foreground md:text-xl">
                   Our platform offers everything you need to succeed in your learning journey.
@@ -262,11 +262,11 @@ export default function App() {
         <div className="container flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row">
           <div className="flex items-center gap-2">
             <GraduationCap className="h-6 w-6" />
-            <span className="text-xl font-bold">IT Course</span>
+            <span className="text-xl font-bold">Vertex Institute Of Technology</span>
           </div>
 
           <p className="text-sm text-muted-foreground">
-            &copy; {new Date().getFullYear()} IT Course. All rights reserved.
+            &copy; {new Date().getFullYear()} Vertex Institute Of Technology. All rights reserved.
           </p>
         </div>
       </footer>

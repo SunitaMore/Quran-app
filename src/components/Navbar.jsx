@@ -17,7 +17,7 @@ const Navbar = () => {
         <div className="flex items-center gap-2">
           <Link to="/" className="text-xl font-bold cursor-pointer px-3 py-1 rounded hover:bg-blue-100 transition"
           onClick={() => handleScrollTo("home")}
-          >IT course</Link>
+          >Vertex Institute Of Technology</Link>
         </div>
         <nav className="hidden md:flex gap-6">
           <Link smooth={true} duration={500} offset={-70}
