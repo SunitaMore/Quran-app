@@ -66,11 +66,11 @@ const Navbar = () => {
           </NavLink>
 
           <Link smooth={true} duration={500} offset={-70}
-            to="testimonials"
+            to="/testimonials"
            className="text-sm font-medium text-muted-foreground cursor-pointer hover:text-blue-600 transition duration-300"
             onClick={() => handleScrollTo("testimonials")}
           >
-            Testimonials
+            Success Stories
           </Link>
           <Link
             to="/contactus"

@@ -1,30 +1,35 @@
 import React from "react";
 import AboutImage from '../assets/images/about_us.jpg';
+import PersontOne from '../assets/images/person1.jpg';
+import PersonTwo from '../assets/images/person2.jpg';
+import PersonThree from '../assets/images/person3.jpg';
+import PersonFour from '../assets/images/person4.jpg';
+
 function AboutPage() {
   const teamMembers = [
     {
       name: "Dr. Sarah Johnson",
       role: "Founder & CEO",
       bio: "With over 15 years in IT education and industry experience at major tech companies.",
-      image: "https://via.placeholder.com/150",
+      image: PersonFour,
     },
     {
       name: "Michael Chen",
       role: "Lead Instructor, Web Development",
       bio: "Full-stack developer with 10+ years of experience building enterprise applications.",
-      image: "https://via.placeholder.com/150",
+      image: PersontOne,
     },
     {
       name: "Priya Patel",
       role: "Lead Instructor, Data Science",
       bio: "Data scientist with expertise in machine learning and AI implementations.",
-      image: "https://via.placeholder.com/150",
+      image: PersonThree,
     },
     {
       name: "James Wilson",
       role: "Student Success Manager",
       bio: "Dedicated to ensuring students receive the support they need throughout their learning journey.",
-      image: "https://via.placeholder.com/150",
+      image: PersonTwo,
     },
   ];
 
@@ -104,12 +109,12 @@ function AboutPage() {
             </p>
           </div>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            <div className="bg-white p-6 rounded-lg shadow-md flex flex-col items-center text-center space-y-4">
+            <div className="bg-blue-300 p-6 rounded-lg shadow-md flex flex-col items-center text-center space-y-4">
               <div className="p-3 rounded-full bg-gray-100">
                 <span className="text-2xl">🎓</span>
               </div>
-              <h3 className="text-xl font-bold">Quality Education</h3>
-              <p className="text-gray-500">
+              <h3 className="text-xl font-bold ">Quality Education</h3>
+              <p className="text-white text-shadow-black ">
                 We are committed to providing the highest quality IT education that meets industry standards and
                 prepares students for real-world challenges.
               </p>
@@ -124,12 +129,12 @@ function AboutPage() {
                 of theoretical concepts.
               </p>
             </div>
-            <div className="bg-white p-6 rounded-lg shadow-md flex flex-col items-center text-center space-y-4">
+            <div className="bg-red-300 p-6 rounded-lg shadow-md flex flex-col items-center text-center space-y-4">
               <div className="p-3 rounded-full bg-gray-100">
                 <span className="text-2xl">👥</span>
               </div>
               <h3 className="text-xl font-bold">Inclusive Community</h3>
-              <p className="text-gray-500">
+              <p className="text-white">
                 We foster an inclusive learning environment where students from all backgrounds can thrive and
                 contribute to the IT industry.
               </p>
@@ -283,14 +288,7 @@ function AboutPage() {
             <p className="mx-auto max-w-[700px]  md:text-xl">
               Join thousands of students who have advanced their careers with IT Course.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 mt-6">
-              <button className="bg-white text-gray-800 hover:bg-gray-200 px-8 py-3 rounded-md font-bold transition-colors">
-                Explore Courses
-              </button>
-              <button className="bg-transparent border-2 border-white hover:text-white hover:bg-gray-700 px-8 py-3 rounded-md font-bold transition-colors">
-                Contact Us
-              </button>
-            </div>
+            
           </div>
         </div>
       </section>
