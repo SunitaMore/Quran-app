@@ -34,6 +34,7 @@ import { Link } from "react-router-dom";
 import PersontOne from "../assets/images/person1.jpg";
 import PersonTwo from "../assets/images/person2.jpg";
 import PersonThree from "../assets/images/person3.jpg";
+// eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 
 
@@ -116,7 +117,7 @@ export default function App() {
                     <NavLink to="/courses" className=" h-12 text-lg shadow-lg hover:bg-gray-300 p-4 flex items-center rounded-xl">
                       Explore Courses
                     </NavLink>
-                    <Link to="/testimonials" onClick={() => handleScrollTo("testimonials")} className=" h-12 text-lg shadow-lg bg-black text-white hover:text-black hover:bg-white p-4 flex items-center rounded-xl ">
+                    <Link to="/" onClick={() => handleScrollTo("testimonials")} className=" h-12 text-lg shadow-lg bg-black text-white hover:text-black hover:bg-white p-4 flex items-center rounded-xl ">
                       Success Stories
                     </Link>
                   </div>
