@@ -86,7 +86,7 @@ const ProjectDetails = () => {
           <div className="mt-10 text-center">
             <button
               onClick={() => navigate("/Handproject")}
-              className="px-5 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
+              className="px-5 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-700 transition"
             >
               ← Back to Projects
             </button>

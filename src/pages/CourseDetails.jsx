@@ -776,7 +776,7 @@ const CourseDetails = () => {
   {/* What You'll Learn Section */}
   {currentCourse.points && currentCourse.points.length > 0 && (
         <div className="bg-green-100 border-l-4 border-green-500 text-green-900 p-4 rounded-xl mb-8 shadow-lg">
-          <h2 className="text-2xl font-bold mb-4">🧠 What You'll Learn</h2>
+          <h2 className="text-2xl font-bold mb-4 border-b pb-5">🧠 What You'll Learn</h2>
           <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-1 pl-6 list-disc ml-6">
             {currentCourse.points.map((point, idx) => (
               <li key={idx} className="leading-tight text-base">{point}</li>

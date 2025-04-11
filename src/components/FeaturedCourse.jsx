@@ -29,6 +29,7 @@ import meanStackImg from '../assets/images/mean.png';
 import mernStackImg from '../assets/images/mern.png';
 import { Link } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
+import { FaBriefcase, FaExchangeAlt, FaBook } from "react-icons/fa";
 
 const itCourses = [
 
@@ -38,9 +39,7 @@ const itCourses = [
     description: "Learn to develop full-stack applications with MongoDB, Express.js, React, and Node.js.",
     image: mernStackImg, // Make sure to import or define this image
     category: "Full Stack",
-    duration: "10 weeks",
-    lessons: 30,
-    students: "2.9k+",
+    
     rating: 4.9,
     price: "See More",
   },
@@ -304,27 +303,29 @@ const FeaturedCourse = () => {
                   </Badge>
                 </div>
 
-                <CardHeader className="p-4 bg-white">
+                <CardHeader className=" bg-white">
                   <CardTitle className="line-clamp-1">{course.title}</CardTitle>
                   <CardDescription className="line-clamp-2">{course.description}</CardDescription>
                 </CardHeader>
 
-                <CardContent className="p-4 pt-0 bg-white">
-                  <div className="flex items-center gap-4 text-sm text-muted-foreground">
-                    <div className="flex items-center gap-1">
-                      <Clock className="h-4 w-4" />
-                      <span>{course.duration}</span>
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <BookOpen className="h-4 w-4" />
-                      <span>{course.lessons} lessons</span>
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <Users className="h-4 w-4" />
-                      <span>{course.students}</span>
-                    </div>
-                  </div>
-                </CardContent>
+                <CardContent className=" pb-2 bg-white mt-0"> {/* reduced top and bottom padding */}
+  <div className="flex justify-around text-green-800 py-2 rounded-xl">
+    <div className="flex flex-col items-center">
+      <FaBriefcase className="text-2xl mb-1" /> {/* slightly smaller icon */}
+      <p className="text-sm text-black">Get your dream job</p>
+    </div>
+    <div className="flex flex-col items-center">
+      <FaExchangeAlt className="text-2xl mb-1" />
+      <p className="text-sm text-black">Switch your role</p>
+    </div>
+    <div className="flex flex-col items-center">
+      <FaBook className="text-2xl mb-1" />
+      <p className="text-sm text-black">Learn from basic</p>
+    </div>
+  </div>
+</CardContent>
+
+
                 <CardFooter className="p-4 flex flex-col items-start justify-between bg-white">
   {/* Rating Section - Move above the price */}
   <div className="flex items-center mb-2">
