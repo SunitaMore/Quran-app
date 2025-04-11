@@ -154,7 +154,7 @@ const HandProject = () => {
   return (
     <section className="bg-gray-100 px-6 py-12 md:py-20 text-gray-800">
       <div className="max-w-5xl mx-auto text-center mb-12">
-        <h2 className="text-4xl font-bold text-blue-600 mb-4">Training Projects</h2>
+        <h2 className="text-4xl font-bold text-black-900 mb-4">Training Projects</h2>
         <p className="text-lg text-gray-600">
           Practical projects to reinforce your skills and build a job-ready portfolio.
         </p>
