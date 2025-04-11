@@ -33,6 +33,16 @@ const ContactUs = () => {
   const sendEmail = (e) => {
     e.preventDefault();
 
+    if (!/^\d{10}$/.test(mobile)) {
+      setPopupMessage("Please enter a valid 10-digit mobile number.");
+      setShowPopup(true);
+      setTimeout(() => {
+        setShowPopup(false);
+        setPopupMessage("");
+      }, 3000);
+      return;
+    }
+
     emailjs
       .send(serviceId, templateId, templateParams, {
         publicKey: publicKey,
@@ -136,18 +146,22 @@ const ContactUs = () => {
 
   {/* Mobile + Location */}
   <div className="flex flex-col md:flex-row gap-4">
-    <div className="w-full md:w-1/2">
-      <label className="block text-sm font-medium mb-1">Mobile Number</label>
-      <input
-        type="tel"
-        placeholder="Your mobile number"
-        name='mobile'
-        value={mobile}
-        onChange={(e) => setMobile(e.target.value)}
-        className="w-full border border-gray-300 px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-        required 
-     />
-    </div>
+  <div className="w-full md:w-1/2">
+        <label className="block text-sm font-medium mb-1">Mobile Number</label>
+        <input
+          type="tel"
+          placeholder="Your mobile number"
+          name="mobile"
+          value={mobile}
+          onChange={(e) => {
+            const onlyNums = e.target.value.replace(/\D/g, ''); // removes non-numeric characters
+            setMobile(onlyNums);
+          }}
+          className="w-full border border-gray-300 px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          required
+          maxLength={10}
+        />
+      </div>
     <div className="w-full md:w-1/2">
       <label className="block text-sm font-medium mb-1">Location</label>
       <input
