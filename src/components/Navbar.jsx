@@ -56,7 +56,7 @@ const Navbar = () => {
             to="/blog"
             className="text-sm font-medium text-muted-foreground hover:text-blue-600 transition duration-300"
           >
-            Blog
+            Blogs
           </NavLink>
           <NavLink
             to="/faculty"
