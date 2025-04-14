@@ -24,6 +24,7 @@ import {
 } from "lucide-react";
 
 import heroPage from "../assets/images/hero_page.png"; 
+import vitLogo from "../assets/images/VIT_Logo2.jpg"
 import { Element } from "react-scroll";
 import Testimonials from "../components/Testimonials";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -96,11 +97,15 @@ export default function App() {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.8 }}
                 >
-                  <div className="space-y-4">
+                  <div className="space-y-5">
+                     <div className="space-y-4">
+                      <img src={vitLogo} alt="Website_logo"
+                       className="h-32 sm:h-40 md:h-52 w-auto mx-auto sm:mx-0 p-2 inline-block"></img>
+                     </div>
                     <Badge className="inline-block px-4 py-1.5 text-sm font-medium rounded-full bg-primary/10 text-primary hover:bg-primary/20 transition-colors" variant="secondary">
                       ✨ New Courses Available
                     </Badge>
-                    <h1 className="text-4xl font-bold tracking-tight sm:text-5xl  uppercase">
+                    <h1 className="text-4xl font-bold tracking-tight sm:text-5xl  uppercase font-bodoni">
                     vertex institute of technology
                     </h1>
                     <p className="text-xl text-foreground/80">
