@@ -3,7 +3,7 @@
 export default function About() {
   return (
     <div className="bg-white text-gray-800 p-6 md:p-12 max-w-4xl mx-auto">
-      <h1 className="text-3xl md:text-4xl font-bold mb-6 text-center text-green-700 ">About Quran</h1>
+     
 
       <p className="mb-6 text-lg leading-relaxed">
         <strong>Welcome to <span className="text-green-600">Quran</span>, your companion in the journey of understanding and connecting with the Holy Qur’an.</strong>
