@@ -1,47 +1,17 @@
-import "./App.css";
-import Home from "./pages/Home";
 import Navbar from "./components/Navbar";
-import { Routes, Route } from 'react-router-dom';
-import AboutUs from "./pages/AboutUs";
-import Faculty from "./pages/Faculty";
+import Hero from "./components/Hero";
+import SurahList from "./components/SurahList";
+import AudioPlayer from "./components/AudioPlayer";
+import AppPromo from "./components/AppPromo";
 
-import HandProject from "./pages/HandProject"
-import ProjectDetails from './pages/ProjectDetails';
-import HireforUs from "./pages/HireforUs"
-import ApplyNow from "./model/ApplyNow";
-import Blog from "./pages/Blog";
-import HireForm from "./model/HireForm";
-import CourseDetails from "./pages/CourseDetails";
-import FeaturedCourse from "./components/FeaturedCourse"; // or wherever it is
-import BlogDetail from "./pages/BlogDetail"; 
-
-
-function App() {
+export default function App() {
   return (
-    <>
+    <div className="font-sans">
       <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-
-        <Route path="/aboutus" element={<AboutUs/>}/>
-        <Route path="/faculty" element={<Faculty/>}/>
-        <Route path="/handproject" element={<HandProject/>}/>
-        <Route path="/hirefromus" element={<HireforUs/>}/>
-        <Route path="/applynow" element={<ApplyNow/>}/>
-        <Route path="/blog" element={<Blog/>}/>
-        <Route path="/blog/:id" element={<BlogDetail/>}/>
-        <Route path="/hireform" element={<HireForm/>}/>
-         {/* Detailed course information page */}
-         <Route path="/course/:courseId" element={<CourseDetails />} />
-         <Route path="/courses" element={<FeaturedCourse />} />
-         <Route path="/project/:title" element={<ProjectDetails />} />
-  
-
-      
-
-      </Routes>
-    </>
+      <Hero />
+      <SurahList />
+      <AudioPlayer />
+      <AppPromo />
+    </div>
   );
 }
-
-export default App;
