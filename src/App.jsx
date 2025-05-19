@@ -9,6 +9,7 @@ import Translation from "./components/Translation";
 import Donate from "./components/Donate";
 import Search from "./components/Search";
 import Account from "./components/Account";
+//import Footer from "./components/Footer";   // Import Footer here
 
 export default function App() {
   return (
@@ -23,7 +24,10 @@ export default function App() {
         <Route path="/donate" element={<Donate />} />
         <Route path="/search" element={<Search />} />
         <Route path="/account" element={<Account />} />
+        
       </Routes>
+     
+
   </>
   );
 }
