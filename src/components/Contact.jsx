@@ -46,9 +46,12 @@ export default function Contact() {
       <h2 className="mr-40 font-bold text-white mb-2 text-2xl hover:text-yellow-400 transition-colors duration-300 cursor-pointer">
         Dua Hub
       </h2>
-      <p className="text-yellow-100 max-w-xl">
-      Want to honor someone you’ve lost? With our Esal-e-Sawab services, you can send Quran recitation, dua, and charity on behalf of your loved ones — from anywhere in the world. Each act is carried out with care, sincerity, and Islamic principles. Message us today to begin.
-      </p>
+      <div className="text-yellow-100 max-w-xl">
+  <p className="ml-5 ">Want to honor someone you’ve lost? With our Esal-e-Sawab services, you can send Quran</p>
+  <p className="ml-2">recitation, dua, and charity on behalf of your loved ones — from anywhere in the world. </p>
+  <p className="ml-4"> Each act is carried out with care, sincerity & Islamic principles. Message us today to begin.</p>
+</div>
+
     </div>
 
     {/* Right: Contact Info */}
@@ -67,7 +70,7 @@ export default function Contact() {
       <a href="#">Raise a Concern</a> - 
       <a href="#">Cookie Policy</a>
     </div>
-    <img src={paymentlogo} alt="Payment Methods" className="h-17 w-70" />
+    <img src={paymentlogo} alt="Payment Methods" className="h-17 w-70 mr-3" />
   </div>
 </div>
 

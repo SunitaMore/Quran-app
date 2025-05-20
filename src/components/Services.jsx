@@ -10,7 +10,7 @@ export default function Services() {
 
       <h2 className="text-2xl font-semibold mb-4 text-left">What We Offer</h2>
       <ul className="space-y-6 text-md text-left">
-        <li>
+        {/* <li>
           <strong>Beautiful Dua Recitations:</strong>
           <p className="text-gray-700">
             Listen to melodious and heartfelt dua recitations by renowned reciters, helping you connect emotionally and spiritually during your prayers and reflection.
@@ -51,7 +51,7 @@ export default function Services() {
           <p className="text-gray-700">
             Create your account to bookmark favorite duas, track your learning progress, and customize your Dua Hub experience.
           </p>
-        </li>
+        </li> */}
       </ul>
 
       <h2 className="text-2xl font-semibold mt-10 mb-4 text-left">Why Choose Dua Hub?</h2>

@@ -50,7 +50,7 @@ import { BookOpen, HeartHandshake, Globe, ShieldCheck } from "lucide-react";
 export default function AboutUs() {
   return (
     
-    <section className="bg-gradient-to-b from-green-50 to-white text-gray-900 py-20 px-6 md:px-20 font-poppins">
+    <section className="bg-gradient-to-br from-green-50 via-white to-green-100 py-20 px-6 shadow-md mt-0 pt-12">
      
   <div className="max-w-4xl mx-auto">
   {/* <h1 className="text-3xl font-bold mb-6 text-black-700 text-left"> About Us</h1> */}

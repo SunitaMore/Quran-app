@@ -6,7 +6,7 @@ import About from "./components/About";
 import Values from "./components/Values";
 import Services from "./components/Services"; // New "Our Services" component
 import Search from "./components/Contact";
-import Account from "./components/Account";
+//import Account from "./components/Account";
 // import Footer from "./components/Footer"; // Optional Footer
 
 
@@ -20,7 +20,7 @@ export default function App() {
         <Route path="/values" element={<Values />} />
         <Route path="/services" element={<Services />} />
         <Route path="/search" element={<Search />} />
-        <Route path="/account" element={<Account />} />
+        {/* <Route path="/account" element={<Account />} /> */}
       </Routes>
       {/* <Footer /> */}
     </>

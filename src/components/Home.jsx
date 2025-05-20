@@ -194,13 +194,13 @@ import introVideo from "../assets/introVideo.mp4";
 import { Link } from 'react-router-dom';
 
 export default function Home() {
-  const text = `Want to honor someone you’ve lost? With our Esal-e-Sawab services, you can send Quran recitation, dua, and charity on behalf of your loved ones — from anywhere in the world. Each act is carried out with care, sincerity, and Islamic principles. Message us today to begin.`;
+  const text = `Want to honor someone you’ve lost? With our Esal-e-Sawab services, you can send Quran recitation, and dua on behalf of your loved ones — from anywhere in the world. Each act is carried out with care, sincerity, and Islamic principles. Message us today to begin.`;
 
   return (
     <div className="font-sans">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-green-50 via-white to-green-100 py-20 px-6 shadow-md">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-start justify-between">
+      <section className="bg-gradient-to-br from-green-50 via-white to-green-100 py-20 px-6 shadow-md mt-0 pt-12">
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-start justify-between mt-0">
           {/* Left Content */}
           <div className="md:w-1/2 text-center md:text-left mb-10 md:mb-0">
             {/* Logo on top */}
@@ -213,24 +213,34 @@ export default function Home() {
             </Link>
 
             {/* Welcome Text */}
-            <h1 className="text-4xl sm:text-5xl font-extrabold text-[#02588F] mb-4">
+          {/* Welcome Text */}
+          <h1 className="text-4xl sm:text-5xl font-extrabold text-[#02588F] mb-4">
               Welcome to <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#02588F] to-[#068479]">Dua Hub</span>
             </h1>
+<div className="text-gray-800 text-lg leading-relaxed">
+  <p className="text-gray-800 text-lg leading-relaxed">
+    {text}
+  </p>
 
-            <div className="text-gray-800 text-lg leading-relaxed">
-              <p className="text-gray-800 text-lg leading-relaxed">
-                {text}
-              </p>
+  {/* Mobile-only Login Button */}
+  <Link
+    to="/account"
+    className="sm:hidden bg-[#02588F] text-white px-4 py-2 rounded-full text-center mt-4 block w-full"
+  >
+    Login
+  </Link>
 
-              <a
-                href="#about"
-                className="inline-block mt-4 px-6 py-2 bg-[#068479] text-white rounded-full shadow-lg hover:bg-green-700 transition duration-300"
-              >
-                Explore Now
-              </a>
-            </div>
+  {/* Explore Now Button */}
+  <a
+    href="#about"
+    className="inline-block mt-4 px-6 py-2 bg-[#068479] text-white rounded-full shadow-lg hover:bg-green-700 transition duration-300 w-full sm:w-auto text-center"
+  >
+    Explore Now
+  </a>
+</div>
+
+
           </div>
-
           {/* Right Side Image Carousel */}
           <div className="md:w-1/2 text-center">
             <Carousel
@@ -285,27 +295,30 @@ export default function Home() {
       </section>
 
       {/* Content Sections */}
-      <div className="max-w-6xl mx-auto px-4 py-16 space-y-24 text-center">
-      <Section title="About Us" id="about" titleClassName="" titleStyle={{ color: "#02588F" }}>
-          <About />
-        </Section>
+     
+<div className="w-full space-y-24 text-center">
+  {/* About Section */}
+  <Section title="About" id="about" titleClassName="text-teal-600" className="px-6 md:px-20 py-12">
+    <About />
+  </Section>
 
-        <Section title="How It Works" id="values"titleClassName="" titleStyle={{ color: "#02588F" }}>
-          <Values />
-        </Section>
+  <Section title="How to Works" id="values" titleClassName="text-teal-600" className="px-6 md:px-20 py-12">
+    <Values />
+  </Section>
 
-        <Section title="Our Services" id="tafsir" titleClassName="" titleStyle={{ color: "#02588F" }}>
-          <Services />
-        </Section>
+  <Section title="Our Services" id="tafsir" titleClassName="text-teal-600" className="px-6 md:px-20 py-12">
+    <Services />
+  </Section>
 
-        <Section title="Contact Us" id="search" titleClassName="" titleStyle={{ color: "#02588F" }}>
-          <Search />
-        </Section>
+  <Section title="Contact Us" id="search" titleClassName="text-teal-600" className="px-6 md:px-20 py-12">
+    <Search />
+  </Section>
 
-        <Section title="Login" id="account" titleClassName="" titleStyle={{ color: "#02588F" }}>
-          <Account />
-        </Section>
-      </div>
+  {/* <Section title="Login" id="account" titleClassName="text-teal-600" className="px-6 md:px-20 py-12">
+    <Account />
+  </Section> */}
+</div>
+
     </div>
   );
 }
