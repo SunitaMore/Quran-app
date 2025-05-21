@@ -185,7 +185,8 @@ export default function Home() {
   const text = `Want to honor someone you’ve lost? With our Esal-e-Sawab services, you can send Quran recitation and dua on behalf of your loved ones — from anywhere in the world. Each act is carried out with care, sincerity, and Islamic principles. Message us today to begin.`;
 
   return (
-    <div className="font-sans overflow-x-hidden">
+    <div className="font-sans overflow-x-hidden w-full">
+
       {/* Hero Section */}
       <section className="relative h-[100vh] w-full overflow-x-hidden">
         {/* Background Slider */}
@@ -203,7 +204,7 @@ export default function Home() {
             className="w-full h-full"
           >
             {[s1,slide1, slide2, slide3, slide4, slide5, slide6, slide7, slide8].map((img, i) => (
-              <div key={i} className="h-[100vh]">
+              <div key={i} className="h-[100vh] w-full">
                 <img
                   src={img}
                   alt={`Slide ${i + 1}`}

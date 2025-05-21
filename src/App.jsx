@@ -8,6 +8,7 @@ import Services from "./components/Services"; // New "Our Services" component
 import Search from "./components/Contact";
 //import Account from "./components/Account";
 // import Footer from "./components/Footer"; // Optional Footer
+import './App.css';
 
 
 export default function App() {
