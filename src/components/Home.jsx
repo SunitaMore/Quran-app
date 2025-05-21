@@ -185,9 +185,9 @@ export default function Home() {
   const text = `Want to honor someone you’ve lost? With our Esal-e-Sawab services, you can send Quran recitation and dua on behalf of your loved ones — from anywhere in the world. Each act is carried out with care, sincerity, and Islamic principles. Message us today to begin.`;
 
   return (
-    <div className="font-sans">
+    <div className="font-sans overflow-x-hidden">
       {/* Hero Section */}
-      <section className="relative h-[100vh] w-full overflow-hidden">
+      <section className="relative h-[100vh] w-full overflow-x-hidden">
         {/* Background Slider */}
         <div className="absolute inset-0 z-0">
           <Carousel
@@ -229,7 +229,7 @@ export default function Home() {
         </div>
 
         {/* Centered Text + Button */}
-        <div className="absolute inset-0 z-10 flex items-start justify-start px-6 py-10 text-left">
+        <div className="absolute inset-0 z-10 flex items-start justify-start px-6 py-10 text-left ">
   <div className="bg-black/80 p-6 rounded-md max-w-xl text-white backdrop-blur-sm mt-40">
     <h1 className="text-4xl sm:text-5xl font-extrabold text-[#02588F] mb-4">
       Welcome to <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#02588F] to-[#068479]">Dua Hub</span>
@@ -257,11 +257,11 @@ export default function Home() {
 
       {/* Other Sections */}
       <div className="w-full space-y-10 text-center bg-white">
-        <Section title="" id="about" titleClassName="text-teal-600" className="px-6 md:px-20 py-12">
+        <Section title="" id="about" titleClassName="text-teal-600" className=" px-4 md:px-20 py-12">
           <About />
         </Section>
 
-        <Section title="" id="values" titleClassName="text-teal-600" className="px-6 md:px-20 py-12">
+        <Section title="" id="values" titleClassName="text-teal-600" className=" md:px-20 py-12">
           <Values />
         </Section>
 
@@ -269,7 +269,7 @@ export default function Home() {
           <Services />
         </Section>
 
-        <Section title="" id="search" titleClassName="text-teal-600" className="px-6 md:px-20 py-12 ">
+        <Section title="" id="search" titleClassName="text-teal-600" className=" py-12 ">
           <Search />
         </Section>
       </div>
@@ -279,7 +279,7 @@ export default function Home() {
 
 function Section({ title, id, children, titleClassName = "", titleStyle = {} }) {
   return (
-    <section id={id} className="bg-white shadow-md rounded-xl p-6">
+    <section id={id} className="bg-white shadow-md rounded-xl p-6 overflow-x-hidden">
       <h2 className={`text-3xl font-bold mb-6 ${titleClassName}`} style={titleStyle}>
         {title}
       </h2>
