@@ -13,6 +13,7 @@ import Search from "./components/Contact";
 export default function App() {
   return (
     <>
+    
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />

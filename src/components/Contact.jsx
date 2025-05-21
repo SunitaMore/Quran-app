@@ -4,9 +4,10 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 
 export default function Contact() {
     return (
+      <div className='mt-5 '>
+      <h1 className="text-3xl font-bold mb-6 text-[#02588F] text-center">Contact Us</h1>
+      <footer className="bg-gray-900 text-white rounded-t-3xl pt-6 mt-6 w-full">
       
-      <footer className="bg-gray-900 text-white rounded-t-3xl pt-6 mt-10">
-        
         <div className="bg-gray-700 bg-opacity-50 rounded-md p-6 max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center mb-6">
           
           {/* Subscription */}
@@ -14,8 +15,8 @@ export default function Contact() {
           <h2 className="text-2xl font-extrabold mb-4 text-white drop-shadow-md">
   Join The Impact Community
 </h2>
-            <input type="email" placeholder="Email Id" className="p-2 rounded-l-md" />
-            <button className="bg-teal-600 px-4 py-2 rounded-r-md text-white font-semibold hover:bg-teal-300 transition">Subscribe</button>
+            <input type="email" placeholder="Email Id" className="p-2 rounded-l-md mr-10 ml-5" />
+            <button className="bg-teal-600 px-4 py-2 rounded-md text-white font-semibold hover:bg-teal-300 transition">Subscribe</button>
           </div>
           {/* Social Links */}
           <div>
@@ -43,19 +44,19 @@ export default function Contact() {
   <div className="mb-4 flex flex-col md:flex-row justify-between gap-6">
     {/* Left: Dua Hub Info */}
     <div className="md:w-2/3">
-      <h2 className="mr-40 font-bold text-white mb-2 text-2xl hover:text-yellow-400 transition-colors duration-300 cursor-pointer">
+      <h2 className="mr-40 font-bold text-white mb-2 text-2xl hover:text-yellow-400 transition-colors duration-300 cursor-pointer text-center">
         Dua Hub
       </h2>
       <div className="text-yellow-100 max-w-xl">
   <p className="ml-5 ">Want to honor someone you’ve lost? With our Esal-e-Sawab services, you can send Quran</p>
-  <p className="ml-2">recitation, dua, and charity on behalf of your loved ones — from anywhere in the world. </p>
+  <p className="ml-3">recitation, dua, and charity on behalf of your loved ones — from anywhere in the world. </p>
   <p className="ml-4"> Each act is carried out with care, sincerity & Islamic principles. Message us today to begin.</p>
 </div>
 
     </div>
 
     {/* Right: Contact Info */}
-    <div className="md:w-1/3 text-yellow-100 space-y-2">
+    <div className="md:w-1/3 text-yellow-100 space-y-2 ml-50">
       <p className='mr-10'><strong>Email:</strong> support@duahub.com</p>
       <p className='mr-15'><strong>Contact:</strong> +91-9876543210</p>
       <p className='mr-5'><strong>Address:</strong> 123 Islamic Street, Pune</p>
@@ -75,6 +76,7 @@ export default function Contact() {
 </div>
 
       </footer>
+      </div>
     );
   }
   

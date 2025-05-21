@@ -45,15 +45,18 @@
 //     </div>
 //   );
 // }
+
+
+
 import { BookOpen, HeartHandshake, Globe, ShieldCheck } from "lucide-react";
 
-export default function AboutUs() {
+export default function About() {
   return (
-    
-    <section className="bg-gradient-to-br from-green-50 via-white to-green-100 py-20 px-6 shadow-md mt-0 pt-12">
-     
-  <div className="max-w-4xl mx-auto">
-  {/* <h1 className="text-3xl font-bold mb-6 text-black-700 text-left"> About Us</h1> */}
+   
+    <section className="bg-gradient-to-br from-green-50 via-white to-green-100  shadow-md mt-0 pt-6">
+      <h1 className="text-3xl font-bold mb-6 text-[#02588F] text-center ">About Us</h1>
+  <div className="max-w-4xl mx-auto ">
+  
     <div className="text-lg font-medium leading-loose tracking-wide space-y-8 animate-fadeIn">
       
       <div className="flex items-start gap-x-4">
@@ -98,3 +101,64 @@ export default function AboutUs() {
 
   );
 }
+
+// import { useEffect } from "react";
+// import { BookOpen, HeartHandshake, Globe, ShieldCheck } from "lucide-react";
+
+// export default function About() {
+//   useEffect(() => {
+//     // Disable scroll on mount
+//     document.body.style.overflow = "hidden";
+
+//     // Re-enable scroll on unmount
+//     return () => {
+//       document.body.style.overflow = "";
+//     };
+//   }, []);
+
+//   return (
+//     <section className="bg-gradient-to-br from-green-50 via-white to-green-100 py-20 px-6 shadow-md mt-0 pt-6">
+//       <h1 className="text-3xl font-bold mb-6 text-[#02588F] text-center ">About Us</h1>
+//       <div className="max-w-4xl mx-auto">
+//         <div className="text-lg font-medium leading-loose tracking-wide space-y-8 animate-fadeIn">
+//           {/* Your icon + text sections */}
+//           <div className="flex items-start gap-x-4">
+//             <div className="w-6 mt-1 flex-shrink-0">
+//               <ShieldCheck size={25} style={{ color: "#068479" }} />
+//             </div>
+//             <p className="flex-1 text-left">
+//               We understand the emotional and spiritual value of esal-e-sawab, which is why we treat every task as a sacred trust, performed with utmost respect and devotion.
+//             </p>
+//           </div>
+
+//           <div className="flex items-start gap-x-4">
+//             <div className="w-6 mt-1 flex-shrink-0">
+//               <BookOpen size={25} style={{ color: "#068479" }} />
+//             </div>
+//             <p className="flex-1 text-left">
+//               Whether it’s arranging Quran khwani, sadaqah, or feeding the needy, we carry out each act with the intention of maximizing the reward for your loved ones.
+//             </p>
+//           </div>
+
+//           <div className="flex items-start gap-x-4">
+//             <div className="w-6 mt-1 flex-shrink-0">
+//               <Globe size={25} style={{ color: "#068479" }} />
+//             </div>
+//             <p className="flex-1 text-left">
+//               Our service allows you to fulfill your religious obligations from anywhere in the world, ensuring your duas and good deeds reach those who need them most.
+//             </p>
+//           </div>
+
+//           <div className="flex items-start gap-x-4">
+//             <div className="w-6 mt-1 flex-shrink-0">
+//               <HeartHandshake size={25} style={{ color: "#068479" }} />
+//             </div>
+//             <p className="flex-1 text-left">
+//               With us, you can rest assured that your esal-e-sawab efforts are managed responsibly, ethically, and in accordance with Islamic principles.
+//             </p>
+//           </div>
+//         </div>
+//       </div>
+//     </section>
+//   );
+// }

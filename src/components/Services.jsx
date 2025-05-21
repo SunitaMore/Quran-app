@@ -1,8 +1,8 @@
 export default function Services() {
   return (
-    <section className="bg-gradient-to-b from-green-50 to-white" >
+    <section className="bg-gradient-to-b from-green-50 to-white mt-0" >
     <div className="p-6 max-w-4xl mx-auto text-gray-800">
-      {/* <h1 className="text-3xl font-bold mb-6 text-black-700 text-left">Our Services</h1> */}
+      <h1 className="text-3xl font-bold mb-6 text-[#02588F] text-center">Our Services</h1>
 
       <p className="mb-6 text-lg text-left">
         At Dua Hub, we are dedicated to providing a comprehensive and enriching spiritual experience. Our services are designed to support your journey with clarity, accessibility, and depth.
